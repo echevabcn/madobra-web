@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MADOBRA — Reduce el tiempo de contratacion capacitando candidatos</title>
+  <meta name="description" content="MADOBRA ayuda a empresas industriales a cubrir vacantes operativas mas rapido. Diagnosticamos gaps de competencias y generamos planes de formacion para que tus candidatos lleguen preparados.">
+  <meta name="keywords" content="capacitacion candidatos, recruiting blue collar, formacion operarios, reducir tiempo contratacion, onboarding rapido">
+  <link rel="canonical" href="https://madobra.com">
+  <meta property="og:title" content="MADOBRA — Candidatos listos para trabajar">
+  <meta property="og:description" content="Plataforma B2B que capacita candidatos para puestos operativos cualificados. Reduce semanas de onboarding a dias.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://madobra.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a2e; background: #fafafa; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; }
+
+    /* Nav */
+    nav { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 0 2rem; height: 68px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 1.4rem; font-weight: 900; color: #1a1a2e; letter-spacing: -0.5px; }
+    .logo span { color: #4f46e5; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: #555; font-size: 0.9rem; font-weight: 500; }
+    .nav-links a:hover { color: #1a1a2e; }
+    .btn-nav { background: #4f46e5; color: #fff !important; padding: 0.55rem 1.3rem; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
+    .btn-nav:hover { background: #4338ca; }
+    .btn-nav-outline { border: 1.5px solid #d0d0d0; color: #333 !important; padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 500; }
+    .btn-nav-outline:hover { border-color: #4f46e5; color: #4f46e5 !important; }
+
+    /* Hero */
+    .hero { max-width: 880px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
+    .hero-badge { display: inline-block; background: #eef2ff; color: #4f46e5; font-size: 0.82rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.8rem; letter-spacing: 0.2px; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1.5px; }
+    .hero h1 em { font-style: normal; color: #4f46e5; }
+    .hero .subtitle { font-size: 1.2rem; color: #555; line-height: 1.7; max-width: 640px; margin: 0 auto 2.5rem; }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #4f46e5; color: #fff; padding: 0.9rem 2.2rem; border-radius: 10px; font-size: 1.05rem; font-weight: 600; transition: background 0.2s; }
+    .btn-primary:hover { background: #4338ca; }
+    .btn-secondary { background: #fff; color: #1a1a2e; padding: 0.9rem 2.2rem; border-radius: 10px; font-size: 1.05rem; font-weight: 600; border: 2px solid #e0e0e0; transition: border-color 0.2s; }
+    .btn-secondary:hover { border-color: #4f46e5; color: #4f46e5; }
+
+    /* Problem */
+    .problem { background: #fff; padding: 5rem 2rem; border-top: 1px solid #eee; }
+    .problem-inner { max-width: 900px; margin: 0 auto; }
+    .problem h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 1.5rem; text-align: center; letter-spacing: -0.5px; }
+    .problem .lead { text-align: center; color: #555; font-size: 1.1rem; line-height: 1.7; max-width: 700px; margin: 0 auto 3rem; }
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .pain-card { border: 1px solid #fee2e2; background: #fef2f2; border-radius: 14px; padding: 1.8rem; }
+    .pain-card h3 { font-size: 1rem; font-weight: 700; color: #991b1b; margin-bottom: 0.5rem; }
+    .pain-card p { color: #7f1d1d; font-size: 0.9rem; line-height: 1.5; opacity: 0.85; }
+    .pain-icon { font-size: 1.5rem; margin-bottom: 0.7rem; }
+
+    /* Solution */
+    .solution { padding: 5rem 2rem; }
+    .solution-inner { max-width: 900px; margin: 0 auto; }
+    .solution h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 1rem; text-align: center; letter-spacing: -0.5px; }
+    .solution .lead { text-align: center; color: #555; font-size: 1.1rem; margin-bottom: 3rem; }
+    .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .solution-card { border: 1px solid #e0e7ff; background: #eef2ff; border-radius: 14px; padding: 1.8rem; }
+    .solution-card h3 { font-size: 1rem; font-weight: 700; color: #3730a3; margin-bottom: 0.5rem; }
+    .solution-card p { color: #4338ca; font-size: 0.9rem; line-height: 1.5; opacity: 0.85; }
+    .sol-icon { font-size: 1.5rem; margin-bottom: 0.7rem; }
+
+    /* How it works */
+    .how { background: #fff; padding: 5rem 2rem; border-top: 1px solid #eee; }
+    .how-inner { max-width: 900px; margin: 0 auto; }
+    .how h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 3rem; text-align: center; letter-spacing: -0.5px; }
+    .how-steps { display: flex; flex-direction: column; gap: 2rem; }
+    .how-step { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .how-num { width: 48px; height: 48px; min-width: 48px; background: #4f46e5; color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
+    .how-text h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .how-text p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+    /* Numbers */
+    .numbers { background: #1a1a2e; color: #fff; padding: 4rem 2rem; }
+    .numbers-inner { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
+    .num-item .num { font-size: 2.5rem; font-weight: 900; color: #818cf8; letter-spacing: -1px; }
+    .num-item p { color: #aaa; font-size: 0.9rem; margin-top: 0.3rem; }
+
+    /* Sectors */
+    .sectors { padding: 5rem 2rem; text-align: center; }
+    .sectors h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.5px; }
+    .sectors .lead { color: #555; font-size: 1.05rem; margin-bottom: 2.5rem; }
+    .sector-tags { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; max-width: 700px; margin: 0 auto; }
+    .sector-tag { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 0.65rem 1.5rem; border-radius: 50px; font-size: 0.95rem; font-weight: 500; color: #444; }
+
+    /* Pricing */
+    .pricing { background: #fff; padding: 5rem 2rem; border-top: 1px solid #eee; text-align: center; }
+    .pricing h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 1rem; }
+    .pricing .lead { color: #555; font-size: 1.05rem; margin-bottom: 3rem; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 700px; margin: 0 auto; }
+    .pricing-card { border: 2px solid #e0e0e0; border-radius: 16px; padding: 2.5rem 2rem; text-align: left; }
+    .pricing-card.featured { border-color: #4f46e5; background: #fafbff; }
+    .pricing-card .plan-name { font-size: 0.85rem; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+    .pricing-card .plan-price { font-size: 2rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .pricing-card .plan-desc { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.5; }
+    .pricing-card ul { list-style: none; margin-bottom: 2rem; }
+    .pricing-card ul li { font-size: 0.9rem; color: #444; padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+    .pricing-card ul li::before { content: "\2713"; position: absolute; left: 0; color: #4f46e5; font-weight: 700; }
+
+    /* CTA */
+    .cta { background: #4f46e5; padding: 5rem 2rem; text-align: center; }
+    .cta h2 { color: #fff; font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.5px; }
+    .cta p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2rem; max-width: 550px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+    .btn-white { background: #fff; color: #4f46e5; padding: 0.9rem 2.2rem; border-radius: 10px; font-size: 1.05rem; font-weight: 600; }
+    .btn-white:hover { background: #f0f0f0; }
+
+    /* Footer */
+    footer { background: #1a1a2e; color: #888; padding: 3rem 2rem; }
+    .footer-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: #aaa; font-size: 0.85rem; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 0.82rem; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero { padding: 3rem 1.5rem 2rem; }
+      .hero-cta { flex-direction: column; align-items: center; }
+      nav { padding: 0 1rem; }
+      .nav-links a:not(.btn-nav) { display: none; }
+      .how-step { flex-direction: column; gap: 0.8rem; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">MADO<span>BRA</span></a>
+    <div class="nav-links">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#precios">Precios</a>
+      <a href="candidatos.html">Soy candidato</a>
+      <a href="https://app.madobra.com/login" class="btn-nav-outline">Entrar</a>
+      <a href="https://app.madobra.com/register" class="btn-nav">Prueba gratis</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">Para empresas con vacantes operativas dificiles de cubrir</div>
+    <h1>Deja de buscar candidatos perfectos.<br><em>Capacitalos.</em></h1>
+    <p class="subtitle">MADOBRA reduce tu tiempo de contratacion para puestos operativos. Diagnosticamos las competencias de tus candidatos y generamos planes de formacion personalizados para que lleguen preparados desde el primer dia.</p>
+    <div class="hero-cta">
+      <a href="https://app.madobra.com/register" class="btn-primary">Empieza gratis</a>
+      <a href="#como-funciona" class="btn-secondary">Ver como funciona</a>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <div class="problem-inner">
+      <h2>El problema que resolvemos</h2>
+      <p class="lead">El 72% de las empresas industriales en Europa no encuentran perfiles operativos cualificados. No es un problema de seleccion — es un problema de formacion.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">&#9200;</div>
+          <h3>Vacantes abiertas meses</h3>
+          <p>Posiciones operativas que tardan 45-90 dias en cubrirse porque "no hay candidatos con experiencia".</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">&#128181;</div>
+          <h3>Coste de no contratar</h3>
+          <p>Cada dia sin cubrir la vacante cuesta produccion perdida, horas extra del equipo, y oportunidades que no se atienden.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">&#128260;</div>
+          <h3>Rotacion y re-formacion</h3>
+          <p>Contratas, formas durante semanas, y el operario se va a los 3 meses. Vuelta a empezar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="solution">
+    <div class="solution-inner">
+      <h2>La solucion: capacitar en vez de filtrar</h2>
+      <p class="lead">MADOBRA cambia el paradigma. En vez de rechazar al 95% de candidatos, los preparamos.</p>
+      <div class="solution-grid">
+        <div class="solution-card">
+          <div class="sol-icon">&#127919;</div>
+          <h3>Diagnostico preciso</h3>
+          <p>La IA analiza exactamente que sabe y que le falta a cada candidato, mapeado a las competencias que TU necesitas.</p>
+        </div>
+        <div class="solution-card">
+          <div class="sol-icon">&#128218;</div>
+          <h3>Planes a medida</h3>
+          <p>Cada candidato recibe un plan de formacion personalizado: recursos externos para lo general, tus materiales para lo interno.</p>
+        </div>
+        <div class="solution-card">
+          <div class="sol-icon">&#128200;</div>
+          <h3>Contrata cuando este listo</h3>
+          <p>Ves el progreso de cada candidato en tiempo real. Contratas cuando alcanza el nivel minimo que tu defines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how" id="como-funciona">
+    <div class="how-inner">
+      <h2>Como funciona</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-num">1</div>
+          <div class="how-text">
+            <h3>Define lo que necesitas</h3>
+            <p>Responde un cuestionario guiado sobre el puesto: tareas diarias, herramientas, errores comunes, nivel minimo de competencia. Sube tus SOPs, manuales o videos si los tienes.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">2</div>
+          <div class="how-text">
+            <h3>La IA extrae las competencias</h3>
+            <p>Nuestro sistema genera automaticamente un mapa de competencias categorizado: conocimiento general (certificaciones estandar), habilidades del rol (formacion practica), y conocimiento interno (tus procesos especificos).</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">3</div>
+          <div class="how-text">
+            <h3>Comparte el diagnostico</h3>
+            <p>Envia un enlace a tus candidatos. Cada uno completa un diagnostico de 30 minutos que mide sus competencias frente a lo que necesitas. Sin que tengan que crear cuenta.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">4</div>
+          <div class="how-text">
+            <h3>Recibe el analisis de gaps</h3>
+            <p>Para cada candidato ves exactamente: que competencias domina, cuales necesita reforzar, y cuales le faltan completamente. Con un plan de formacion concreto, recursos sugeridos, y horas estimadas.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">5</div>
+          <div class="how-text">
+            <h3>Forma y contrata</h3>
+            <p>El candidato sigue su plan de formacion. Tu ves su progreso. Cuando alcanza el nivel que definiste como "listo para trabajar", contratas con confianza.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Numbers -->
+  <section class="numbers">
+    <div class="numbers-inner">
+      <div class="num-item">
+        <div class="num">-60%</div>
+        <p>Tiempo de onboarding</p>
+      </div>
+      <div class="num-item">
+        <div class="num">3x</div>
+        <p>Mas candidatos viables por vacante</p>
+      </div>
+      <div class="num-item">
+        <div class="num">10 min</div>
+        <p>Para definir un puesto</p>
+      </div>
+      <div class="num-item">
+        <div class="num">0</div>
+        <p>Semanas de formacion desperdiciadas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectors -->
+  <section class="sectors">
+    <h2>Para empresas con puestos operativos cualificados</h2>
+    <p class="lead">Si tu empresa necesita gente con certificaciones, maquinaria, o procesos especificos — MADOBRA es para ti.</p>
+    <div class="sector-tags">
+      <span class="sector-tag">Logistica y Almacen</span>
+      <span class="sector-tag">Manufactura</span>
+      <span class="sector-tag">Construccion</span>
+      <span class="sector-tag">Industria</span>
+      <span class="sector-tag">Automocion</span>
+      <span class="sector-tag">Alimentacion</span>
+      <span class="sector-tag">Instalaciones</span>
+      <span class="sector-tag">Transporte</span>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="precios">
+    <h2>Modelo sencillo, sin sorpresas</h2>
+    <p class="lead">Pagas por rol activo. Los candidatos usan la plataforma gratis.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="plan-name">Inicio</div>
+        <div class="plan-price">Gratis</div>
+        <div class="plan-desc">Para probar la plataforma con un puesto.</div>
+        <ul>
+          <li>1 rol activo</li>
+          <li>Diagnosticos ilimitados</li>
+          <li>Mapa de competencias con IA</li>
+          <li>Planes de formacion basicos</li>
+        </ul>
+        <a href="https://app.madobra.com/register" class="btn-primary" style="display:block;text-align:center;">Empezar gratis</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="plan-name">Empresa</div>
+        <div class="plan-price">Contactanos</div>
+        <div class="plan-desc">Para empresas con multiples vacantes operativas.</div>
+        <ul>
+          <li>Roles ilimitados</li>
+          <li>Diagnosticos ilimitados</li>
+          <li>Planes de formacion avanzados</li>
+          <li>Seguimiento de progreso candidatos</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <a href="mailto:info@madobra.com" class="btn-primary" style="display:block;text-align:center;">Solicitar demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Tu proximo operario ya existe.<br>Solo le falta formacion.</h2>
+    <p>Deja de descartar candidatos. Empieza a capacitarlos y reduce tu tiempo de contratacion desde esta semana.</p>
+    <a href="https://app.madobra.com/register" class="btn-white">Empieza gratis ahora</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 MADOBRA — GUT PROJECTS, S.L.</div>
+      <div class="footer-links">
+        <a href="candidatos.html">Soy candidato</a>
+        <a href="mailto:info@madobra.com">info@madobra.com</a>
+        <a href="https://app.madobra.com/login">Entrar</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

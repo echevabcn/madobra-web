@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MADOBRA para Candidatos — Tu perfil profesional en un solo lugar</title>
+  <meta name="description" content="Crea tu perfil profesional en MADOBRA, gestiona tus certificaciones y accede a oportunidades laborales en tu sector. Gratis para candidatos.">
+  <link rel="canonical" href="https://madobra.com/candidatos.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a2e; background: #fafafa; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; }
+
+    nav { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 0 2rem; height: 68px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 1.4rem; font-weight: 900; color: #1a1a2e; letter-spacing: -0.5px; }
+    .logo span { color: #4f46e5; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: #555; font-size: 0.9rem; font-weight: 500; }
+    .btn-nav { background: #4f46e5; color: #fff !important; padding: 0.55rem 1.3rem; border-radius: 8px; font-weight: 600; }
+    .btn-nav:hover { background: #4338ca; }
+
+    .hero { max-width: 800px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
+    .hero-badge { display: inline-block; background: #ecfdf5; color: #059669; font-size: 0.82rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.8rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px; }
+    .hero h1 em { font-style: normal; color: #059669; }
+    .hero p { font-size: 1.15rem; color: #555; line-height: 1.7; max-width: 600px; margin: 0 auto 2.5rem; }
+    .btn-primary { background: #059669; color: #fff; padding: 0.9rem 2.2rem; border-radius: 10px; font-size: 1.05rem; font-weight: 600; display: inline-block; }
+    .btn-primary:hover { background: #047857; }
+
+    .benefits { padding: 4rem 2rem 5rem; }
+    .benefits-inner { max-width: 900px; margin: 0 auto; }
+    .benefits h2 { text-align: center; font-size: 1.8rem; font-weight: 800; margin-bottom: 3rem; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .benefit-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 14px; padding: 2rem; }
+    .benefit-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .benefit-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .benefit-card p { color: #666; font-size: 0.92rem; line-height: 1.6; }
+
+    .how { background: #fff; padding: 5rem 2rem; border-top: 1px solid #eee; }
+    .how-inner { max-width: 800px; margin: 0 auto; }
+    .how h2 { text-align: center; font-size: 1.8rem; font-weight: 800; margin-bottom: 3rem; }
+    .how-steps { display: flex; flex-direction: column; gap: 2rem; }
+    .how-step { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .how-num { width: 44px; height: 44px; min-width: 44px; background: #059669; color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+    .how-text h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .how-text p { color: #666; font-size: 0.92rem; line-height: 1.6; }
+
+    .sectors { padding: 4rem 2rem; text-align: center; }
+    .sectors h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+    .sector-tags { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+    .sector-tag { background: #ecfdf5; border: 1px solid #a7f3d0; padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500; color: #065f46; }
+
+    .cta { background: #059669; padding: 5rem 2rem; text-align: center; }
+    .cta h2 { color: #fff; font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+    .cta p { color: rgba(255,255,255,0.85); font-size: 1.05rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-white { background: #fff; color: #059669; padding: 0.9rem 2.2rem; border-radius: 10px; font-size: 1.05rem; font-weight: 600; }
+    .btn-white:hover { background: #f0fdf4; }
+
+    footer { background: #1a1a2e; color: #888; padding: 2.5rem 2rem; text-align: center; font-size: 0.82rem; }
+    footer a { color: #aaa; }
+
+    @media (max-width: 640px) {
+      .hero { padding: 3rem 1.5rem 2rem; }
+      nav { padding: 0 1rem; }
+      .nav-links a:not(.btn-nav) { display: none; }
+      .how-step { flex-direction: column; gap: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">MADO<span>BRA</span></a>
+    <div class="nav-links">
+      <a href="/">Para empresas</a>
+      <a href="https://app.madobra.com/candidato/login" class="btn-nav">Entrar</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-badge">100% gratis para candidatos</div>
+    <h1>Tu perfil profesional <em>siempre listo</em></h1>
+    <p>Crea tu perfil, gestiona tus certificaciones y accede a oportunidades laborales en tu sector. Una sola vez, para todas las empresas.</p>
+    <a href="https://app.madobra.com/candidato/registro" class="btn-primary">Crear mi perfil gratis</a>
+  </section>
+
+  <section class="benefits">
+    <div class="benefits-inner">
+      <h2>Por que registrarte</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128196;</div>
+          <h3>Un perfil, muchas oportunidades</h3>
+          <p>Registra tus datos, certificaciones y disponibilidad una sola vez. Las empresas te encuentran sin que tengas que aplicar a cada oferta.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128274;</div>
+          <h3>Certificaciones en orden</h3>
+          <p>Sube tus carnets y certificados. Te avisamos antes de que caduquen para que siempre estes al dia.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#127891;</div>
+          <h3>Plan de formacion personalizado</h3>
+          <p>Despues de cada diagnostico, recibes un plan con los cursos y recursos que necesitas para mejorar tu perfil.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128640;</div>
+          <h3>Destaca frente a otros candidatos</h3>
+          <p>Un perfil completo con certificaciones verificadas te posiciona mejor para las vacantes que te interesan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="how-inner">
+      <h2>Como funciona</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-num">1</div>
+          <div class="how-text">
+            <h3>Crea tu cuenta en 1 minuto</h3>
+            <p>Solo necesitas nombre, email y contraseña. Sin descargar ninguna app.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">2</div>
+          <div class="how-text">
+            <h3>Completa tu perfil</h3>
+            <p>Indica tu sector, sube tus certificaciones (carnet de carretillero, PRL, CAP...) y tu disponibilidad. Tarda menos de 5 minutos.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">3</div>
+          <div class="how-text">
+            <h3>Recibe oportunidades</h3>
+            <p>Las empresas que buscan tu perfil te contactan directamente. Tu decides si te interesa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectors">
+    <h2>Sectores con oportunidades</h2>
+    <div class="sector-tags">
+      <span class="sector-tag">Transporte</span>
+      <span class="sector-tag">Logistica</span>
+      <span class="sector-tag">Construccion</span>
+      <span class="sector-tag">Electricidad</span>
+      <span class="sector-tag">Industria</span>
+      <span class="sector-tag">Hosteleria</span>
+      <span class="sector-tag">Alimentacion</span>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Empieza hoy. Es gratis.</h2>
+    <p>Crea tu perfil en menos de 5 minutos y que las empresas te encuentren.</p>
+    <a href="https://app.madobra.com/candidato/registro" class="btn-white">Crear mi perfil</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 MADOBRA — GUT PROJECTS, S.L. &middot; <a href="mailto:info@madobra.com">info@madobra.com</a> &middot; <a href="/">Para empresas</a></p>
+  </footer>
+
+</body>
+</html>
