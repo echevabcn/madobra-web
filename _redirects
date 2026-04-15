@@ -1,0 +1,3 @@
+# MADOBRA — Netlify redirects
+# Static marketing site: archivos servidos directamente, sin SPA fallback
+# (un catch-all a /index.html convierte 404 reales en soft-404 y daña el SEO)

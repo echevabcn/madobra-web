@@ -1,0 +1,46 @@
+# MADOBRA
+
+> Reduce el tiempo de contratación capacitando candidatos para puestos operativos.
+
+MADOBRA es una plataforma B2B que ayuda a empresas industriales a cubrir vacantes operativas difíciles. En lugar de rechazar al 95% de candidatos por falta de experiencia, los diagnosticamos y preparamos con planes de formación personalizados.
+
+## El problema que resolvemos
+
+El 72% de las empresas industriales en Europa no encuentran perfiles operativos cualificados. Las vacantes operativas tardan 45-90 días en cubrirse. Cada día sin cubrir cuesta producción perdida y horas extra. La rotación a los 3 meses obliga a re-empezar el proceso.
+
+## La solución: capacitar en vez de filtrar
+
+1. **Define el puesto**: Cuestionario guiado sobre tareas, herramientas, errores comunes, nivel mínimo de competencia
+2. **IA extrae competencias**: Mapa automático de conocimiento general, habilidades del rol y conocimiento interno de la empresa
+3. **Diagnóstico del candidato**: Enlace de 30 minutos, sin registro necesario
+4. **Análisis de gaps**: Qué domina, qué necesita reforzar, qué le falta — con plan de formación concreto
+5. **Forma y contrata**: Seguimiento de progreso en tiempo real, contratas cuando está listo
+
+## Sectores atendidos
+
+- Logística y Almacén
+- Manufactura
+- Construcción
+- Industria
+- Automoción
+- Alimentación
+- Instalaciones
+- Transporte
+
+## Resultados típicos
+
+- -60% tiempo de onboarding
+- 3x más candidatos viables por vacante
+- 10 minutos para definir un puesto
+- 0 semanas de formación desperdiciadas
+
+## Modelo de precios
+
+- **Inicio**: Gratis — 1 rol activo, diagnósticos ilimitados, planes básicos
+- **Empresa**: Contactar — roles ilimitados, planes avanzados, seguimiento de progreso, soporte prioritario
+
+## Contacto
+
+- Web: https://madobra.com
+- Email: hello@madobra.com
+- Ubicación: España / Europa
