@@ -64,7 +64,7 @@ The site is styled as an **industrial technical publication** — a field report
 - **Hero spec data** (index + candidatos) is fictional (candidate #00421, Juan Martínez, etc.) — purely visual. If brand legal flags this, swap to fully abstract placeholders (`XXX`, `—`) instead of real-looking names and dates.
 - **Mobile density** on `candidatos.html` — the carnet card has several rows; check on a 375px viewport that it doesn't feel cramped. Simplify rows if so.
 - **OG image** (`/og-image.png`) still reflects the previous palette — regenerate with new brand if social sharing becomes relevant. The legal pages now reference it too (og:image + twitter:image added).
-- **`Organization.sameAs`** in index.html JSON-LD is empty — add LinkedIn / YouTube URLs once accounts exist. Do not point to 404s.
+- **`Organization.sameAs`** in index.html JSON-LD is empty — user will supply LinkedIn (+ likely YouTube) URLs in a few days. Add them to the `Organization` entry inside the `@graph` on `index.html`. Do not add placeholder / fake URLs — empty is better than 404.
 - **Content depth** remains the biggest SEO gap: ~1200 words on index, ~900 on candidatos vs 1800–2500 on competitor B2B landings. Blog or resource hub recommended — not dev work, content strategy.
 
 ## Tracking / analytics
@@ -112,3 +112,44 @@ All favicons were rasterized from `Design/madobra-brand-assets/png/05-seal-alone
 - `candidatos.html` — WebPage + BreadcrumbList
 - `terminos.html` — WebPage + BreadcrumbList (publisher = GUT PROJECTS)
 - `privacidad.html` — WebPage + BreadcrumbList (publisher = GUT PROJECTS)
+
+## Content / SEO roadmap (proposed, not yet written)
+
+The biggest SEO gap is content depth. 12 articles proposed across two audiences, prioritized by volume-to-competition ratio.
+
+### Empresa (B2B buyers)
+
+1. **Cuánto cuesta cada día con una vacante operativa sin cubrir (con calculadora)** · kw `coste vacante sin cubrir operario` · TOFU/MOFU · calculadora = lead magnet.
+2. **Matriz de competencias para operario de almacén: plantilla editable** · kw `matriz competencias operario almacén` · MOFU · plantilla descargable = backlinks.
+3. **Cómo evaluar a un carretillero en 30 minutos sin verlo trabajar** · kw `evaluación competencias carretillero` · BOFU · enlace directo a producto.
+4. **De seleccionar a capacitar: el cambio de paradigma en contratación blue-collar** · kw `capacitar candidatos operarios` · TOFU · thought leadership / category creation.
+5. **Rotación de operarios: las 5 causas reales y cómo cortarlas en 90 días** · kw `rotación operarios industria` · MOFU · evergreen.
+6. **IA para RRHH industrial: 5 casos reales que funcionan hoy** · kw `ia rrhh industrial` · trending + narrativa de producto.
+
+### Candidato (captación orgánica)
+
+7. **Carnet de carretillero 2026: requisitos, precio, duración y renovación** · kw `carnet carretillero 2026` · evergreen de volumen alto.
+8. **PRL 20h vs 60h vs específicos: cuál necesitas según tu sector** · kw `diferencia prl 20 60 horas` · confusión masiva = tráfico recurrente.
+9. **CAP mercancías vs CAP viajeros: renovación y precio** · kw `renovación cap mercancías` · urgente operativo = alta conversión.
+10. **Me caducó el carnet de carretillero: guía paso a paso** · kw `caducó carnet carretillero` · long-tail transaccional.
+11. **Las 7 certificaciones más demandadas en logística en España** · kw `certificaciones logística españa` · listicle, matchea con el catálogo de `candidatos.html`.
+12. **Trabajar en construcción: TPC, FLC, PRL — guía completa para empezar** · kw `qué necesito trabajar construcción` · pillar de sector.
+
+### Recommended priorities
+
+Start with **#1**, **#7**, **#8** (best volume-to-competition ratio; #1 converts best to demo).
+
+### Execution spec
+
+- **Length**: 1.200–1.800 palabras por artículo.
+- **Schemas**: `HowTo` donde encaje (ej. #3, #10), `FAQPage` en todos.
+- **Structure**: H1 con keyword exacto → TL;DR (3 líneas) → TOC → 4-6 H2 con long-tails → FAQ al final (5 Q) → CTA suave al producto.
+- **Interlinking**: cada artículo enlaza a 2-3 otros + al producto.
+- **Cadencia**: 1/semana durante 3 meses → punto de inflexión orgánico a los 4–6 meses.
+- **Pre-work**: instalar Google Search Console y mirar queries ya devolviendo impresiones en posición 8-15 → escribir sobre esas primero (10× ROI vs empezar de cero).
+
+### Blog platform decision (pending)
+
+- Opción A (inicio): `/blog/<slug>.html` estáticos en este mismo repo, manteniendo el sistema editorial ya construido (reusar estilos de `terminos.html` como plantilla base — header versionado, TOC, § marginalia, colofón). Cero infra nueva.
+- Opción B (cuando haya >20 artículos): migrar a Astro o Hugo para automatizar nav, tags, RSS, related posts. Netlify sigue sirviendo.
+- Recomendación: **empezar con A**, migrar a B cuando duela mantenerlo a mano.
