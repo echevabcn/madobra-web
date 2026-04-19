@@ -14,7 +14,7 @@
   </script>
   <title>MADOBRA — Reduce el tiempo de contratación capacitando candidatos</title>
   <meta name="description" content="MADOBRA ayuda a empresas industriales a cubrir vacantes operativas más rápido. Diagnosticamos gaps de competencias y generamos planes de formación para que tus candidatos lleguen preparados.">
-  <meta name="keywords" content="capacitación candidatos, formación operarios, reducir tiempo contratación, evaluación competencias operarios, onboarding operarios fábrica, selección personal operativo">
+  <meta name="keywords" content="capacitación candidatos, formación operarios, reducir tiempo contratación, evaluación competencias operarios, operario cualificado industrial, gap competencias operarios, carnet carretillero, PRL logística, onboarding operarios fábrica, selección personal operativo">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="MADOBRA">
   <meta name="theme-color" content="#0E2340">
@@ -113,6 +113,7 @@
       opacity: 0.04; mix-blend-mode: multiply;
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.055 0 0 0 0 0.137 0 0 0 0 0.251 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
     }
+    @media (max-width: 767px) { body::before { display: none; } }
 
     a { color: inherit; text-decoration: none; }
 
@@ -149,11 +150,16 @@
 
     /* Nav */
     nav.site-nav {
-      background: rgba(243, 239, 227, 0.82);
-      backdrop-filter: saturate(160%) blur(14px);
-      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      background: rgba(243, 239, 227, 0.96);
       border-bottom: var(--hairline) solid var(--border);
       position: sticky; top: 0; z-index: 100;
+    }
+    @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+      nav.site-nav {
+        background: rgba(243, 239, 227, 0.82);
+        backdrop-filter: saturate(160%) blur(14px);
+        -webkit-backdrop-filter: saturate(160%) blur(14px);
+      }
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
     .brand { display: inline-flex; align-items: baseline; gap: 10px; color: var(--navy-500); }
@@ -726,6 +732,50 @@
         ],
         "audience": { "@type": "BusinessAudience", "audienceType": "Empresas industriales con vacantes operativas" },
         "provider": { "@id": "https://madobra.com/#organization" }
+      },
+      {
+        "@type": "HowTo",
+        "name": "Cómo funciona MADOBRA",
+        "description": "De una vacante operativa abierta a un operario formado en cinco pasos, usando diagnóstico con IA y planes de formación personalizados.",
+        "totalTime": "PT10M",
+        "inLanguage": "es-ES",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Define lo que necesitas",
+            "text": "Respondes un cuestionario guiado sobre el puesto: tareas, herramientas, errores comunes y nivel mínimo de competencia. Subes SOPs, manuales o vídeos si los tienes.",
+            "url": "https://madobra.com/#como-funciona"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "La IA extrae las competencias",
+            "text": "El sistema genera un mapa categorizado: conocimiento general (certificaciones), habilidades del rol (formación práctica) y conocimiento interno de la empresa.",
+            "url": "https://madobra.com/#como-funciona"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Comparte el diagnóstico",
+            "text": "Envías un enlace a tus candidatos. Cada uno completa el diagnóstico en 30 minutos sin necesidad de crear cuenta.",
+            "url": "https://madobra.com/#como-funciona"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Recibe el análisis de gaps",
+            "text": "Por cada candidato: qué competencias domina, cuáles necesita reforzar y cuáles le faltan. Con plan de formación concreto, recursos y horas estimadas.",
+            "url": "https://madobra.com/#como-funciona"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Forma y contrata",
+            "text": "El candidato sigue su plan de formación. Tú ves su progreso en tiempo real. Cuando alcanza el nivel que definiste como listo para trabajar, contratas con confianza.",
+            "url": "https://madobra.com/#como-funciona"
+          }
+        ]
       },
       {
         "@type": "FAQPage",

@@ -63,7 +63,9 @@ The site is styled as an **industrial technical publication** — a field report
 - **App registration flow**: should link to `https://madobra.com/terminos.html` and `https://madobra.com/privacidad.html` with explicit checkbox at signup (both `app.madobra.com/register` and `/candidato/registro`).
 - **Hero spec data** (index + candidatos) is fictional (candidate #00421, Juan Martínez, etc.) — purely visual. If brand legal flags this, swap to fully abstract placeholders (`XXX`, `—`) instead of real-looking names and dates.
 - **Mobile density** on `candidatos.html` — the carnet card has several rows; check on a 375px viewport that it doesn't feel cramped. Simplify rows if so.
-- **OG image** (`/og-image.png`) still reflects the previous palette — regenerate with new brand if social sharing becomes relevant.
+- **OG image** (`/og-image.png`) still reflects the previous palette — regenerate with new brand if social sharing becomes relevant. The legal pages now reference it too (og:image + twitter:image added).
+- **`Organization.sameAs`** in index.html JSON-LD is empty — add LinkedIn / YouTube URLs once accounts exist. Do not point to 404s.
+- **Content depth** remains the biggest SEO gap: ~1200 words on index, ~900 on candidatos vs 1800–2500 on competitor B2B landings. Blog or resource hub recommended — not dev work, content strategy.
 
 ## Tracking / analytics
 
@@ -101,3 +103,12 @@ All favicons were rasterized from `Design/madobra-brand-assets/png/05-seal-alone
 - `ec334f5` GA4 tag
 - `f63563c` Madobra brand system applied, legal pages, favicons regenerated
 - `528dcea` editorial pass (spec-sheet/carnet heroes, document-framed legal pages, "Términos y condiciones" rename)
+- `0e66368` SEO hygiene: llms.txt email, sitemap lastmod refresh, Offer schema (availability + url)
+- SEO audit round 2: legal pages OG/Twitter images, WebPage schema, hreflang; index HowTo schema; sector-specific ES keywords; `@supports` fallback for backdrop-filter; paper grain disabled below 768px; aria-label on carnet avatar
+
+## Structured data inventory
+
+- `index.html` — @graph with Organization, WebSite, SoftwareApplication, **HowTo** (5-step proceso), FAQPage
+- `candidatos.html` — WebPage + BreadcrumbList
+- `terminos.html` — WebPage + BreadcrumbList (publisher = GUT PROJECTS)
+- `privacidad.html` — WebPage + BreadcrumbList (publisher = GUT PROJECTS)
