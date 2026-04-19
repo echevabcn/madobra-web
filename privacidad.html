@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JDXSJ0FJF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8JDXSJ0FJF');
+  </script>
+  <title>Política de Privacidad — MADOBRA</title>
+  <meta name="description" content="Política de Privacidad de MADOBRA. Información sobre el tratamiento de datos personales conforme al RGPD y la LOPDGDD.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0E2340">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="https://madobra.com/privacidad.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy-500: #0E2340;
+      --navy-600: #0A1A30;
+      --amber-500: #F58021;
+      --amber-700: #B5570F;
+      --cream-100: #F3EFE3;
+      --steel-100: #E5E8EC;
+      --steel-300: #A8B1BD;
+      --steel-500: #5A6778;
+      --steel-700: #2A3648;
+
+      --canvas:  var(--cream-100);
+      --surface: #FFFFFF;
+      --text-1:  var(--navy-500);
+      --text-2:  var(--steel-500);
+      --border:  var(--steel-100);
+
+      --sh-focus: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--amber-500);
+      --r-sm: 4px;
+      --r-lg: 8px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px; line-height: 24px;
+      color: var(--text-1); background: var(--canvas);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    a { color: var(--amber-700); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--amber-500); }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 640px)  { .container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .container { padding: 0 64px; } }
+
+    /* Nav */
+    nav.site-nav {
+      background: rgba(243, 239, 227, 0.85);
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 0.5px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--navy-500); text-decoration: none; }
+    .brand-name { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { color: var(--text-2); font-size: 13px; font-weight: 500; text-decoration: none; }
+    .nav-links a:hover { color: var(--text-1); }
+
+    /* Doc */
+    main.doc {
+      max-width: 760px; margin: 0 auto;
+      padding: 56px 16px 72px;
+    }
+    @media (min-width: 640px)  { main.doc { padding: 72px 32px 96px; } }
+    @media (min-width: 1024px) { main.doc { padding: 96px 64px 120px; } }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+      font-size: 11px; color: var(--text-2);
+      letter-spacing: 0.14em; text-transform: uppercase;
+      display: inline-block; margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 36px; line-height: 40px;
+      font-weight: 600; letter-spacing: -0.02em;
+      color: var(--navy-500); margin-bottom: 8px;
+    }
+    @media (min-width: 1024px) { h1 { font-size: 44px; line-height: 48px; } }
+    .updated {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: var(--text-2); letter-spacing: 0.06em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 20px; line-height: 26px; font-weight: 600;
+      letter-spacing: -0.01em; color: var(--navy-500);
+      margin: 40px 0 12px;
+      padding-top: 24px; border-top: 0.5px solid var(--border);
+    }
+    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 32px; }
+    p, li { color: var(--text-1); font-size: 16px; line-height: 26px; }
+    p { margin-bottom: 12px; max-width: 66ch; }
+    ul { margin: 4px 0 16px 20px; }
+    li { margin-bottom: 4px; }
+    strong { font-weight: 600; color: var(--navy-500); }
+    .intro {
+      font-size: 17px; line-height: 28px; color: var(--text-2);
+      margin-bottom: 16px; max-width: 66ch;
+    }
+
+    .contact-card {
+      background: var(--surface); border: 0.5px solid var(--border);
+      border-radius: var(--r-lg); padding: 20px 24px;
+      margin: 4px 0 16px; font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; line-height: 22px; color: var(--navy-500);
+    }
+    .contact-card a { font-family: 'Inter', sans-serif; }
+
+    /* Footer */
+    footer.site-footer {
+      background: var(--navy-600); color: var(--steel-300);
+      padding: 40px 0 28px;
+    }
+    .footer-inner {
+      display: flex; flex-direction: column; gap: 20px;
+      justify-content: space-between; align-items: flex-start;
+    }
+    @media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; } }
+    .footer-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--cream-100); text-decoration: none; }
+    .footer-brand .brand-name { color: var(--cream-100); font-size: 16px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; }
+    .footer-links a { color: var(--steel-300); text-decoration: none; }
+    .footer-links a:hover { color: var(--cream-100); }
+    .footer-meta {
+      max-width: 1280px; margin: 20px auto 0; padding: 16px 16px 0;
+      border-top: 0.5px solid var(--steel-700);
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      letter-spacing: 0.08em; color: var(--steel-500); flex-wrap: wrap; gap: 8px;
+    }
+    @media (min-width: 640px)  { .footer-meta { padding: 16px 32px 0; } }
+    @media (min-width: 1024px) { .footer-meta { padding: 16px 64px 0; } }
+
+    @media (max-width: 767px) {
+      .nav-links { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand" aria-label="MADOBRA">
+        <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="32" fill="#F58021"/>
+          <path d="M 16 48 L 16 17.45 L 24.73 17.45 L 32 32 L 39.27 17.45 L 48 17.45 L 48 48 L 42.18 48 L 42.18 26.18 L 33.45 43.64 L 30.55 43.64 L 21.82 26.18 L 21.82 48 Z" fill="#0E2340"/>
+          <path d="M 29.09 37.82 L 32 40.73 L 36.36 34.91" fill="none" stroke="#F3EFE3" stroke-width="2.91" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">madobra</span>
+      </a>
+      <div class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/terminos.html">Términos</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="doc">
+    <span class="eyebrow">Documento legal</span>
+    <h1>Política de Privacidad</h1>
+    <p class="updated">Última actualización · 19 abril 2026</p>
+
+    <p class="intro">En MADOBRA nos tomamos en serio la privacidad. Esta política explica qué datos tratamos, con qué fines y qué derechos tienes, conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).</p>
+
+    <h2>1. Responsable del tratamiento</h2>
+    <div class="contact-card">
+      <strong>GUT PROJECTS, S.L.</strong> — NIF B26958850<br>
+      C/ Cartagena 14, 28028 Madrid (España)<br>
+      Contacto: <a href="mailto:info@madobra.com">info@madobra.com</a>
+    </div>
+
+    <h2>2. Datos que tratamos</h2>
+    <ul>
+      <li><strong>Empresa usuaria:</strong> razón social, datos fiscales, nombre y datos de contacto del usuario registrado (email, teléfono) y datos de facturación cuando proceda.</li>
+      <li><strong>Candidatos:</strong> nombre, email, teléfono, sector profesional, certificaciones, disponibilidad y resultados de los diagnósticos de competencias.</li>
+      <li><strong>Contenidos subidos:</strong> documentos, manuales, SOPs y materiales que la empresa aporta para configurar puestos y planes de formación.</li>
+      <li><strong>Datos de navegación:</strong> dirección IP, identificadores de cookies, logs técnicos y datos de analítica (Google Analytics).</li>
+    </ul>
+
+    <h2>3. Finalidades del tratamiento</h2>
+    <ul>
+      <li>Prestar el servicio: diagnóstico de competencias, generación de planes de formación y gestión de perfiles.</li>
+      <li>Gestión contractual, facturación y soporte.</li>
+      <li>Comunicaciones operativas relacionadas con el servicio.</li>
+      <li>Mejora de la plataforma mediante análisis agregado.</li>
+      <li>Cumplimiento de obligaciones legales.</li>
+    </ul>
+
+    <h2>4. Base legal</h2>
+    <ul>
+      <li><strong>Ejecución del contrato:</strong> para prestar el servicio solicitado.</li>
+      <li><strong>Consentimiento:</strong> para cookies no estrictamente necesarias y comunicaciones comerciales.</li>
+      <li><strong>Obligación legal:</strong> para la conservación fiscal y contable.</li>
+      <li><strong>Interés legítimo:</strong> para garantizar la seguridad y mejorar el servicio.</li>
+    </ul>
+
+    <h2>5. Plazo de conservación</h2>
+    <p>Conservamos los datos mientras exista relación contractual y, tras su finalización, durante los plazos legales aplicables (hasta 6 años para obligaciones fiscales y mercantiles). Los datos de candidatos se conservan mientras la cuenta esté activa o la empresa mantenga un proceso abierto con el candidato.</p>
+
+    <h2>6. Destinatarios y encargados del tratamiento</h2>
+    <p>Para prestar el servicio compartimos datos con:</p>
+    <ul>
+      <li>Proveedores de infraestructura cloud y alojamiento.</li>
+      <li>Proveedores de modelos de inteligencia artificial utilizados para el diagnóstico de competencias y la generación de planes.</li>
+      <li>Proveedores de analítica web (Google Analytics).</li>
+      <li>Proveedores de comunicación transaccional (envío de emails).</li>
+      <li>Administraciones públicas cuando la normativa lo exija.</li>
+    </ul>
+    <p>Todos los encargados actúan bajo contrato con garantías suficientes conforme al artículo 28 del RGPD.</p>
+
+    <h2>7. Transferencias internacionales</h2>
+    <p>Algunos proveedores pueden estar ubicados fuera del Espacio Económico Europeo. En tal caso, aplicamos garantías adecuadas: cláusulas contractuales tipo aprobadas por la Comisión Europea, decisiones de adecuación o medidas suplementarias cuando sea necesario.</p>
+
+    <h2>8. Decisiones automatizadas e IA</h2>
+    <p>El diagnóstico de competencias y la generación de planes de formación utilizan modelos de inteligencia artificial. Estos análisis son <strong>orientativos</strong> y no sustituyen la decisión humana: la contratación y evaluación final corresponde siempre a la empresa empleadora.</p>
+
+    <h2>9. Tus derechos</h2>
+    <p>Puedes ejercer en cualquier momento los derechos de <strong>acceso, rectificación, supresión, oposición, limitación, portabilidad</strong> y a no ser objeto de decisiones individuales automatizadas, escribiendo a <a href="mailto:info@madobra.com">info@madobra.com</a> con una prueba de identidad.</p>
+    <p>Si consideras que el tratamiento no se ajusta a la normativa, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).</p>
+
+    <h2>10. Cookies</h2>
+    <p>La plataforma utiliza cookies técnicas necesarias para su funcionamiento y cookies analíticas (Google Analytics) para medir el uso del sitio. Puedes aceptar o rechazar las cookies no esenciales desde la configuración de tu navegador.</p>
+
+    <h2>11. Seguridad</h2>
+    <p>Aplicamos medidas técnicas y organizativas razonables para proteger los datos frente a accesos no autorizados, pérdida o alteración.</p>
+
+    <h2>12. Menores</h2>
+    <p>El servicio está dirigido a mayores de 16 años. No tratamos de forma consciente datos de menores de esa edad.</p>
+
+    <h2>13. Cambios en esta política</h2>
+    <p>Podemos actualizar esta política. Publicaremos cualquier cambio en esta página indicando la fecha de la nueva versión. Si los cambios son sustanciales, lo notificaremos a los usuarios registrados.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="/" class="footer-brand" aria-label="MADOBRA">
+        <svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="32" fill="#F58021"/>
+          <path d="M 16 48 L 16 17.45 L 24.73 17.45 L 32 32 L 39.27 17.45 L 48 17.45 L 48 48 L 42.18 48 L 42.18 26.18 L 33.45 43.64 L 30.55 43.64 L 21.82 26.18 L 21.82 48 Z" fill="#0E2340"/>
+          <path d="M 29.09 37.82 L 32 40.73 L 36.36 34.91" fill="none" stroke="#F3EFE3" stroke-width="2.91" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">madobra</span>
+      </a>
+      <div class="footer-links">
+        <a href="/">Inicio</a>
+        <a href="/candidatos.html">Candidatos</a>
+        <a href="/terminos.html">Términos</a>
+        <a href="mailto:info@madobra.com">info@madobra.com</a>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 MADOBRA</span>
+      <span>Madrid · ES</span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -16,11 +16,14 @@
   <meta name="description" content="MADOBRA ayuda a empresas industriales a cubrir vacantes operativas más rápido. Diagnosticamos gaps de competencias y generamos planes de formación para que tus candidatos lleguen preparados.">
   <meta name="keywords" content="capacitación candidatos, formación operarios, reducir tiempo contratación, evaluación competencias operarios, onboarding operarios fábrica, selección personal operativo">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="GUT PROJECTS, S.L.">
-  <meta name="theme-color" content="#4f46e5">
+  <meta name="author" content="MADOBRA">
+  <meta name="theme-color" content="#0E2340">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="512x512" href="/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="canonical" href="https://madobra.com/">
   <link rel="alternate" hreflang="es-ES" href="https://madobra.com/">
   <link rel="alternate" hreflang="x-default" href="https://madobra.com/">
@@ -42,121 +45,326 @@
   <meta name="twitter:title" content="MADOBRA — Reduce el tiempo de contratación capacitando candidatos">
   <meta name="twitter:description" content="Plataforma B2B que capacita candidatos para puestos operativos cualificados.">
   <meta name="twitter:image" content="https://madobra.com/og-image.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --navy-500: #0E2340;
+      --navy-600: #0A1A30;
+      --navy-700: #071221;
+      --navy-900: #030811;
+      --amber-500: #F58021;
+      --amber-600: #D96A17;
+      --amber-700: #B5570F;
+      --cream-50:  #FAF8F1;
+      --cream-100: #F3EFE3;
+      --cream-200: #E5DEC8;
+      --steel-100: #E5E8EC;
+      --steel-300: #A8B1BD;
+      --steel-500: #5A6778;
+      --steel-700: #2A3648;
+      --steel-900: #0A0F1C;
+      --success: #1F7A4D;
+      --error:   #C8372E;
+
+      --canvas:  var(--cream-100);
+      --surface: #FFFFFF;
+      --text-1:  var(--navy-500);
+      --text-2:  var(--steel-500);
+      --text-3:  var(--steel-300);
+      --border:  var(--steel-100);
+
+      --sh-sm: 0 1px 2px 0 rgba(14, 35, 64, 0.04), 0 1px 1px 0 rgba(14, 35, 64, 0.03);
+      --sh-md: 0 4px 8px -2px rgba(14, 35, 64, 0.08), 0 2px 4px -1px rgba(14, 35, 64, 0.04);
+      --sh-focus: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--amber-500);
+
+      --r-sm: 4px;
+      --r-md: 6px;
+      --r-lg: 8px;
+      --r-full: 9999px;
+    }
+
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', system-ui, sans-serif; color: #1a1a2e; background: #fafafa; -webkit-font-smoothing: antialiased; }
-    a { text-decoration: none; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px; line-height: 24px;
+      color: var(--text-1); background: var(--canvas);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 640px)  { .container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .container { padding: 0 64px; } }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+      font-size: 11px; color: var(--text-2);
+      letter-spacing: 0.14em; text-transform: uppercase;
+      display: inline-block;
+    }
 
     /* Nav */
-    nav { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 0 2rem; height: 68px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-    .logo { font-size: 1.4rem; font-weight: 900; color: #1a1a2e; letter-spacing: -0.5px; }
-    .logo span { color: #4f46e5; }
-    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-    .nav-links a { color: #555; font-size: 0.9rem; font-weight: 500; }
-    .nav-links a:hover { color: #1a1a2e; }
-    .btn-nav { background: #4f46e5; color: #fff !important; padding: 0.55rem 1.3rem; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
-    .btn-nav:hover { background: #4338ca; }
-    .btn-nav-outline { border: 1.5px solid #d0d0d0; color: #333 !important; padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 500; }
-    .btn-nav-outline:hover { border-color: #4f46e5; color: #4f46e5 !important; }
+    nav.site-nav {
+      background: rgba(243, 239, 227, 0.85);
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 0.5px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--navy-500); }
+    .brand svg { display: block; }
+    .brand-name { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-2); font-size: 13px; font-weight: 500; transition: color 120ms ease; }
+    .nav-links a:hover { color: var(--text-1); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: inherit; font-weight: 500; line-height: 1;
+      border: none; cursor: pointer; border-radius: var(--r-sm);
+      transition: background 120ms ease, border-color 120ms ease, color 120ms ease, transform 80ms ease;
+      white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn:focus-visible { outline: none; box-shadow: var(--sh-focus); }
+    .btn-sm { height: 32px; padding: 0 14px; font-size: 13px; }
+    .btn-md { height: 40px; padding: 0 18px; font-size: 14px; }
+    .btn-lg { height: 48px; padding: 0 22px; font-size: 15px; }
+    .btn-primary { background: var(--amber-500); color: var(--navy-500); }
+    .btn-primary:hover { background: var(--amber-600); }
+    .btn-secondary { background: var(--surface); color: var(--navy-500); border: 1.5px solid var(--navy-500); }
+    .btn-secondary:hover { background: var(--cream-100); }
+    .btn-ghost { background: transparent; color: var(--navy-500); border: 1px solid var(--steel-300); }
+    .btn-ghost:hover { border-color: var(--navy-500); background: rgba(14, 35, 64, 0.03); }
+    .btn-inverse { background: var(--surface); color: var(--navy-500); }
+    .btn-inverse:hover { background: var(--cream-50); }
 
     /* Hero */
-    .hero { max-width: 880px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
-    .hero-badge { display: inline-block; background: #eef2ff; color: #4f46e5; font-size: 0.82rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.8rem; letter-spacing: 0.2px; }
-    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1.5px; }
-    .hero h1 em { font-style: normal; color: #4f46e5; }
-    .hero .subtitle { font-size: 1.2rem; color: #555; line-height: 1.7; max-width: 640px; margin: 0 auto 2.5rem; }
-    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: #4f46e5; color: #fff; padding: 0.9rem 2.2rem; border-radius: 10px; font-size: 1.05rem; font-weight: 600; transition: background 0.2s; }
-    .btn-primary:hover { background: #4338ca; }
-    .btn-secondary { background: #fff; color: #1a1a2e; padding: 0.9rem 2.2rem; border-radius: 10px; font-size: 1.05rem; font-weight: 600; border: 2px solid #e0e0e0; transition: border-color 0.2s; }
-    .btn-secondary:hover { border-color: #4f46e5; color: #4f46e5; }
+    .hero { padding: 80px 0 72px; }
+    @media (min-width: 640px) { .hero { padding: 112px 0 96px; } }
+    .hero-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+    .hero .eyebrow { margin-bottom: 20px; }
+    .hero h1 {
+      font-size: 40px; line-height: 44px;
+      font-weight: 600; letter-spacing: -0.03em;
+      color: var(--navy-500); margin-bottom: 20px;
+    }
+    @media (min-width: 640px)  { .hero h1 { font-size: 48px; line-height: 52px; } }
+    @media (min-width: 1024px) { .hero h1 { font-size: 56px; line-height: 60px; } }
+    .hero h1 em { font-style: normal; color: var(--amber-600); }
+    .hero-sub {
+      font-size: 18px; line-height: 28px; color: var(--text-2);
+      max-width: 620px; margin: 0 auto 32px;
+    }
+    @media (min-width: 640px) { .hero-sub { font-size: 19px; line-height: 30px; } }
+    .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
-    /* Problem */
-    .problem { background: #fff; padding: 5rem 2rem; border-top: 1px solid #eee; }
-    .problem-inner { max-width: 900px; margin: 0 auto; }
-    .problem h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 1.5rem; text-align: center; letter-spacing: -0.5px; }
-    .problem .lead { text-align: center; color: #555; font-size: 1.1rem; line-height: 1.7; max-width: 700px; margin: 0 auto 3rem; }
-    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .pain-card { border: 1px solid #fee2e2; background: #fef2f2; border-radius: 14px; padding: 1.8rem; }
-    .pain-card h3 { font-size: 1rem; font-weight: 700; color: #991b1b; margin-bottom: 0.5rem; }
-    .pain-card p { color: #7f1d1d; font-size: 0.9rem; line-height: 1.5; opacity: 0.85; }
-    .pain-icon { font-size: 1.5rem; margin-bottom: 0.7rem; }
+    /* Hero proof strip */
+    .proof-strip {
+      display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+      margin-top: 56px; padding: 20px 0;
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .proof-item {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      color: var(--text-2); letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    /* Section base */
+    section.pad { padding: 72px 0; }
+    @media (min-width: 1024px) { section.pad { padding: 96px 0; } }
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+    .section-head .eyebrow { margin-bottom: 12px; color: var(--amber-700); }
+    .section-head h2 {
+      font-size: 32px; line-height: 36px;
+      font-weight: 600; letter-spacing: -0.02em; color: var(--navy-500);
+      margin-bottom: 16px;
+    }
+    @media (min-width: 1024px) { .section-head h2 { font-size: 40px; line-height: 44px; } }
+    .section-head p {
+      font-size: 17px; line-height: 26px; color: var(--text-2);
+    }
+
+    /* Problem cards */
+    .pain-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 640px)  { .pain-grid { grid-template-columns: repeat(3, 1fr); } }
+    .pain-card {
+      background: var(--surface); border: 0.5px solid var(--border);
+      border-radius: var(--r-lg); padding: 24px;
+      transition: border-color 120ms ease, box-shadow 120ms ease;
+    }
+    .pain-card:hover { border-color: var(--steel-300); box-shadow: var(--sh-sm); }
+    .pain-stat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--error); margin-bottom: 12px;
+    }
+    .pain-card h3 { font-size: 17px; line-height: 24px; font-weight: 600; color: var(--navy-500); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .pain-card p { font-size: 14px; line-height: 22px; color: var(--text-2); }
 
     /* Solution */
-    .solution { padding: 5rem 2rem; }
-    .solution-inner { max-width: 900px; margin: 0 auto; }
-    .solution h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 1rem; text-align: center; letter-spacing: -0.5px; }
-    .solution .lead { text-align: center; color: #555; font-size: 1.1rem; margin-bottom: 3rem; }
-    .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .solution-card { border: 1px solid #e0e7ff; background: #eef2ff; border-radius: 14px; padding: 1.8rem; }
-    .solution-card h3 { font-size: 1rem; font-weight: 700; color: #3730a3; margin-bottom: 0.5rem; }
-    .solution-card p { color: #4338ca; font-size: 0.9rem; line-height: 1.5; opacity: 0.85; }
-    .sol-icon { font-size: 1.5rem; margin-bottom: 0.7rem; }
+    .solution { background: var(--surface); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+    .sol-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 640px)  { .sol-grid { grid-template-columns: repeat(3, 1fr); } }
+    .sol-card { padding: 24px; border-left: 2px solid var(--border); }
+    .sol-card.highlight { border-left-color: var(--amber-500); }
+    .sol-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2);
+      margin-bottom: 8px;
+    }
+    .sol-card h3 { font-size: 18px; line-height: 26px; font-weight: 600; color: var(--navy-500); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .sol-card p { font-size: 14px; line-height: 22px; color: var(--text-2); }
 
     /* How it works */
-    .how { background: #fff; padding: 5rem 2rem; border-top: 1px solid #eee; }
-    .how-inner { max-width: 900px; margin: 0 auto; }
-    .how h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 3rem; text-align: center; letter-spacing: -0.5px; }
-    .how-steps { display: flex; flex-direction: column; gap: 2rem; }
-    .how-step { display: flex; gap: 1.5rem; align-items: flex-start; }
-    .how-num { width: 48px; height: 48px; min-width: 48px; background: #4f46e5; color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
-    .how-text h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
-    .how-text p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+    .how-grid {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+      counter-reset: step;
+    }
+    @media (min-width: 1024px) { .how-grid { grid-template-columns: 1fr 1fr; gap: 16px 32px; } }
+    .how-step {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 20px 24px; background: var(--surface);
+      border: 0.5px solid var(--border); border-radius: var(--r-lg);
+      counter-increment: step;
+    }
+    .how-num {
+      flex-shrink: 0; width: 28px; height: 28px;
+      background: var(--navy-500); color: var(--cream-100);
+      border-radius: var(--r-full); font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; font-weight: 500;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .how-step:first-child .how-num { background: var(--amber-500); color: var(--navy-500); }
+    .how-text h3 { font-size: 16px; line-height: 22px; font-weight: 600; color: var(--navy-500); margin-bottom: 4px; letter-spacing: -0.01em; }
+    .how-text p { font-size: 14px; line-height: 22px; color: var(--text-2); }
 
-    /* Numbers */
-    .numbers { background: #1a1a2e; color: #fff; padding: 4rem 2rem; }
-    .numbers-inner { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
-    .num-item .num { font-size: 2.5rem; font-weight: 900; color: #818cf8; letter-spacing: -1px; }
-    .num-item p { color: #aaa; font-size: 0.9rem; margin-top: 0.3rem; }
+    /* Numbers (inverse) */
+    .numbers { background: var(--navy-500); }
+    .num-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+      text-align: left;
+    }
+    @media (min-width: 640px)  { .num-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+    .num-item { padding: 0 4px; }
+    .num-kicker {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      color: var(--amber-500); letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .num-value {
+      font-size: 44px; line-height: 1; font-weight: 600;
+      letter-spacing: -0.03em; color: var(--cream-100); margin-bottom: 8px;
+    }
+    .num-item p { font-size: 13px; line-height: 20px; color: var(--steel-300); }
 
     /* Sectors */
-    .sectors { padding: 5rem 2rem; text-align: center; }
-    .sectors h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.5px; }
-    .sectors .lead { color: #555; font-size: 1.05rem; margin-bottom: 2.5rem; }
-    .sector-tags { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; max-width: 700px; margin: 0 auto; }
-    .sector-tag { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 0.65rem 1.5rem; border-radius: 50px; font-size: 0.95rem; font-weight: 500; color: #444; }
+    .sectors-wrap { text-align: center; }
+    .sector-tags {
+      display: flex; gap: 8px; justify-content: center;
+      flex-wrap: wrap; max-width: 760px; margin: 0 auto;
+    }
+    .sector-tag {
+      background: var(--surface); border: 0.5px solid var(--border);
+      padding: 8px 14px; border-radius: var(--r-full);
+      font-size: 13px; font-weight: 500; color: var(--navy-500);
+    }
 
     /* Pricing */
-    .pricing { background: #fff; padding: 5rem 2rem; border-top: 1px solid #eee; text-align: center; }
-    .pricing h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 1rem; }
-    .pricing .lead { color: #555; font-size: 1.05rem; margin-bottom: 3rem; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 700px; margin: 0 auto; }
-    .pricing-card { border: 2px solid #e0e0e0; border-radius: 16px; padding: 2.5rem 2rem; text-align: left; }
-    .pricing-card.featured { border-color: #4f46e5; background: #fafbff; }
-    .pricing-card .plan-name { font-size: 0.85rem; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
-    .pricing-card .plan-price { font-size: 2rem; font-weight: 800; margin-bottom: 0.3rem; }
-    .pricing-card .plan-desc { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.5; }
-    .pricing-card ul { list-style: none; margin-bottom: 2rem; }
-    .pricing-card ul li { font-size: 0.9rem; color: #444; padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
-    .pricing-card ul li::before { content: "\2713"; position: absolute; left: 0; color: #4f46e5; font-weight: 700; }
+    .pricing { background: var(--surface); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr; gap: 16px;
+      max-width: 780px; margin: 0 auto;
+    }
+    @media (min-width: 640px) { .pricing-grid { grid-template-columns: 1fr 1fr; } }
+    .plan {
+      border: 0.5px solid var(--border); border-radius: var(--r-lg);
+      padding: 28px; background: var(--surface);
+      display: flex; flex-direction: column;
+    }
+    .plan.featured { border: 1px solid var(--navy-500); position: relative; }
+    .plan.featured::before {
+      content: 'RECOMENDADO';
+      position: absolute; top: -10px; left: 24px;
+      background: var(--amber-500); color: var(--navy-500);
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      font-weight: 500; letter-spacing: 0.14em;
+      padding: 3px 8px; border-radius: var(--r-sm);
+    }
+    .plan-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-2); margin-bottom: 8px;
+    }
+    .plan-price {
+      font-size: 32px; line-height: 36px; font-weight: 600;
+      letter-spacing: -0.02em; color: var(--navy-500); margin-bottom: 8px;
+    }
+    .plan-desc { font-size: 14px; line-height: 22px; color: var(--text-2); margin-bottom: 20px; }
+    .plan-features { list-style: none; flex: 1; margin-bottom: 24px; }
+    .plan-features li {
+      font-size: 14px; line-height: 22px; color: var(--navy-500);
+      padding: 6px 0 6px 24px; position: relative;
+    }
+    .plan-features li::before {
+      content: ""; position: absolute; left: 0; top: 12px;
+      width: 14px; height: 8px;
+      border-left: 1.5px solid var(--amber-500);
+      border-bottom: 1.5px solid var(--amber-500);
+      transform: rotate(-45deg); transform-origin: left center;
+    }
 
     /* CTA */
-    .cta { background: #4f46e5; padding: 5rem 2rem; text-align: center; }
-    .cta h2 { color: #fff; font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.5px; }
-    .cta p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2rem; max-width: 550px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-    .btn-white { background: #fff; color: #4f46e5; padding: 0.9rem 2.2rem; border-radius: 10px; font-size: 1.05rem; font-weight: 600; }
-    .btn-white:hover { background: #f0f0f0; }
+    .cta-block { background: var(--navy-500); }
+    .cta-inner { text-align: center; max-width: 680px; margin: 0 auto; }
+    .cta-inner h2 {
+      color: var(--cream-100); font-size: 32px; line-height: 36px;
+      font-weight: 600; letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    @media (min-width: 1024px) { .cta-inner h2 { font-size: 40px; line-height: 44px; } }
+    .cta-inner p { color: var(--steel-300); font-size: 17px; line-height: 26px; margin-bottom: 28px; }
 
     /* Footer */
-    footer { background: #1a1a2e; color: #888; padding: 3rem 2rem; }
-    .footer-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a { color: #aaa; font-size: 0.85rem; }
-    .footer-links a:hover { color: #fff; }
-    .footer-copy { font-size: 0.82rem; }
+    footer.site-footer {
+      background: var(--navy-600); color: var(--steel-300);
+      padding: 48px 0 32px;
+    }
+    .footer-inner {
+      display: flex; flex-direction: column; gap: 24px;
+      justify-content: space-between; align-items: flex-start;
+    }
+    @media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; } }
+    .footer-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--cream-100); }
+    .footer-brand .brand-name { color: var(--cream-100); font-size: 16px; }
+    .footer-links {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .footer-links a { color: var(--steel-300); transition: color 120ms ease; }
+    .footer-links a:hover { color: var(--cream-100); }
+    .footer-meta {
+      max-width: 1280px; margin: 24px auto 0; padding: 16px 16px 0;
+      border-top: 0.5px solid var(--steel-700);
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      letter-spacing: 0.08em; color: var(--steel-500); flex-wrap: wrap; gap: 8px;
+    }
+    @media (min-width: 640px)  { .footer-meta { padding: 16px 32px 0; } }
+    @media (min-width: 1024px) { .footer-meta { padding: 16px 64px 0; } }
 
-    /* Responsive */
-    @media (max-width: 640px) {
-      .hero { padding: 3rem 1.5rem 2rem; }
-      .hero-cta { flex-direction: column; align-items: center; }
-      nav { padding: 0 1rem; }
-      .nav-links a:not(.btn-nav) { display: none; }
-      .how-step { flex-direction: column; gap: 0.8rem; }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
+    /* Responsive nav */
+    @media (max-width: 767px) {
+      .nav-links a:not(.btn) { display: none; }
+      .nav-links { gap: 8px; }
     }
   </style>
 
@@ -168,15 +376,11 @@
         "@type": "Organization",
         "@id": "https://madobra.com/#organization",
         "name": "MADOBRA",
-        "legalName": "GUT PROJECTS, S.L.",
         "url": "https://madobra.com/",
         "logo": "https://madobra.com/logo.png",
         "description": "Plataforma B2B que reduce el tiempo de contratación capacitando candidatos para puestos operativos cualificados.",
         "email": "info@madobra.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "ES"
-        },
+        "address": { "@type": "PostalAddress", "addressCountry": "ES" },
         "areaServed": ["ES", "EU"]
       },
       {
@@ -195,19 +399,8 @@
         "url": "https://madobra.com/",
         "description": "Plataforma B2B que reduce el tiempo de contratación para puestos operativos diagnosticando competencias con IA y generando planes de formación personalizados.",
         "offers": [
-          {
-            "@type": "Offer",
-            "name": "Inicio",
-            "price": "0",
-            "priceCurrency": "EUR",
-            "description": "1 rol activo, diagnósticos ilimitados, planes básicos"
-          },
-          {
-            "@type": "Offer",
-            "name": "Empresa",
-            "priceCurrency": "EUR",
-            "description": "Roles ilimitados, planes avanzados, seguimiento de progreso, soporte prioritario"
-          }
+          { "@type": "Offer", "name": "Inicio", "price": "0", "priceCurrency": "EUR", "description": "1 rol activo, diagnósticos ilimitados, planes básicos" },
+          { "@type": "Offer", "name": "Empresa", "priceCurrency": "EUR", "description": "Roles ilimitados, planes avanzados, seguimiento de progreso, soporte prioritario" }
         ],
         "featureList": [
           "Diagnóstico de competencias con IA",
@@ -216,55 +409,17 @@
           "Seguimiento de progreso de candidatos",
           "Integración con materiales internos de la empresa"
         ],
-        "audience": {
-          "@type": "BusinessAudience",
-          "audienceType": "Empresas industriales con vacantes operativas"
-        },
+        "audience": { "@type": "BusinessAudience", "audienceType": "Empresas industriales con vacantes operativas" },
         "provider": { "@id": "https://madobra.com/#organization" }
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿Qué es MADOBRA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "MADOBRA es una plataforma B2B que ayuda a empresas industriales a cubrir vacantes operativas más rápido. En lugar de filtrar candidatos por experiencia, diagnosticamos sus competencias con IA y generamos planes de formación personalizados para que lleguen preparados."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Para qué tipo de puestos sirve MADOBRA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Para puestos operativos cualificados (blue collar) en sectores como logística, manufactura, construcción, industria, automoción, alimentación, instalaciones y transporte."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuánto cuesta MADOBRA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "El plan Inicio es gratis e incluye 1 rol activo y diagnósticos ilimitados. El plan Empresa, bajo demanda, incluye roles ilimitados, planes avanzados y seguimiento de progreso. Los candidatos siempre usan la plataforma de forma gratuita."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuánto se tarda en definir un puesto?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Unos 10 minutos. Respondes un cuestionario guiado sobre tareas, herramientas y nivel mínimo de competencia, y la IA extrae automáticamente el mapa de competencias del puesto."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Los candidatos necesitan crear cuenta para hacer el diagnóstico?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. El diagnóstico se comparte mediante un enlace público y el candidato lo completa en unos 30 minutos sin registro."
-            }
-          }
+          { "@type": "Question", "name": "¿Qué es MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "MADOBRA es una plataforma B2B que ayuda a empresas industriales a cubrir vacantes operativas más rápido. En lugar de filtrar candidatos por experiencia, diagnosticamos sus competencias con IA y generamos planes de formación personalizados para que lleguen preparados." } },
+          { "@type": "Question", "name": "¿Para qué tipo de puestos sirve MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "Para puestos operativos cualificados (blue collar) en sectores como logística, manufactura, construcción, industria, automoción, alimentación, instalaciones y transporte." } },
+          { "@type": "Question", "name": "¿Cuánto cuesta MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "El plan Inicio es gratis e incluye 1 rol activo y diagnósticos ilimitados. El plan Empresa, bajo demanda, incluye roles ilimitados, planes avanzados y seguimiento de progreso. Los candidatos siempre usan la plataforma de forma gratuita." } },
+          { "@type": "Question", "name": "¿Cuánto se tarda en definir un puesto?", "acceptedAnswer": { "@type": "Answer", "text": "Unos 10 minutos. Respondes un cuestionario guiado sobre tareas, herramientas y nivel mínimo de competencia, y la IA extrae automáticamente el mapa de competencias del puesto." } },
+          { "@type": "Question", "name": "¿Los candidatos necesitan crear cuenta para hacer el diagnóstico?", "acceptedAnswer": { "@type": "Answer", "text": "No. El diagnóstico se comparte mediante un enlace público y el candidato lo completa en unos 30 minutos sin registro." } }
         ]
       }
     ]
@@ -273,47 +428,68 @@
 </head>
 <body>
 
-  <nav>
-    <a href="/" class="logo">MADO<span>BRA</span></a>
-    <div class="nav-links">
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#precios">Precios</a>
-      <a href="candidatos.html">Soy candidato</a>
-      <a href="https://app.madobra.com/login" class="btn-nav-outline">Entrar</a>
-      <a href="https://app.madobra.com/register" class="btn-nav">Prueba gratis</a>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand" aria-label="MADOBRA">
+        <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="32" fill="#F58021"/>
+          <path d="M 16 48 L 16 17.45 L 24.73 17.45 L 32 32 L 39.27 17.45 L 48 17.45 L 48 48 L 42.18 48 L 42.18 26.18 L 33.45 43.64 L 30.55 43.64 L 21.82 26.18 L 21.82 48 Z" fill="#0E2340"/>
+          <path d="M 29.09 37.82 L 32 40.73 L 36.36 34.91" fill="none" stroke="#F3EFE3" stroke-width="2.91" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">madobra</span>
+      </a>
+      <div class="nav-links">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#precios">Precios</a>
+        <a href="candidatos.html">Soy candidato</a>
+        <a href="https://app.madobra.com/login" class="btn btn-ghost btn-sm">Entrar</a>
+        <a href="https://app.madobra.com/register" class="btn btn-primary btn-sm">Prueba gratis</a>
+      </div>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-badge">Para empresas con vacantes operativas difíciles de cubrir</div>
-    <h1>Deja de buscar candidatos perfectos.<br><em>Capacítalos.</em></h1>
-    <p class="subtitle">MADOBRA reduce tu tiempo de contratación para puestos operativos. Diagnosticamos las competencias de tus candidatos y generamos planes de formación personalizados para que lleguen preparados desde el primer día.</p>
-    <div class="hero-cta">
-      <a href="https://app.madobra.com/register" class="btn-primary">Empieza gratis</a>
-      <a href="#como-funciona" class="btn-secondary">Ver como funciona</a>
+    <div class="container hero-inner">
+      <span class="eyebrow">Para empresas · vacantes operativas</span>
+      <h1>Deja de buscar candidatos perfectos.<br><em>Capacítalos.</em></h1>
+      <p class="hero-sub">MADOBRA reduce tu tiempo de contratación para puestos operativos. Diagnosticamos las competencias de tus candidatos y generamos planes de formación personalizados para que lleguen preparados desde el primer día.</p>
+      <div class="hero-cta">
+        <a href="https://app.madobra.com/register" class="btn btn-primary btn-lg">Empezar gratis</a>
+        <a href="#como-funciona" class="btn btn-secondary btn-lg">Ver cómo funciona</a>
+      </div>
+      <div class="proof-strip">
+        <span class="proof-item">Logística</span>
+        <span class="proof-item">Manufactura</span>
+        <span class="proof-item">Construcción</span>
+        <span class="proof-item">Industria</span>
+        <span class="proof-item">Automoción</span>
+      </div>
     </div>
   </section>
 
   <!-- Problem -->
-  <section class="problem">
-    <div class="problem-inner">
-      <h2>El problema que resolvemos</h2>
-      <p class="lead">El 72% de las empresas industriales en Europa no encuentran perfiles operativos cualificados. No es un problema de seleccion — es un problema de formacion.</p>
+  <section class="pad">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">El problema</span>
+        <h2>No es un problema de selección. Es un problema de formación.</h2>
+        <p>El 72% de las empresas industriales en Europa no encuentran perfiles operativos cualificados. Filtrar más fino no resuelve el fondo.</p>
+      </div>
       <div class="pain-grid">
         <div class="pain-card">
-          <div class="pain-icon">&#9200;</div>
+          <div class="pain-stat">45–90 días</div>
           <h3>Vacantes abiertas meses</h3>
-          <p>Posiciones operativas que tardan 45-90 dias en cubrirse porque "no hay candidatos con experiencia".</p>
+          <p>Posiciones operativas que no se cubren porque "no hay candidatos con experiencia".</p>
         </div>
         <div class="pain-card">
-          <div class="pain-icon">&#128181;</div>
-          <h3>Coste de no contratar</h3>
-          <p>Cada dia sin cubrir la vacante cuesta produccion perdida, horas extra del equipo, y oportunidades que no se atienden.</p>
+          <div class="pain-stat">Coste oculto</div>
+          <h3>Cada día sin cubrir cuesta</h3>
+          <p>Producción perdida, horas extra del equipo y oportunidades que no se atienden.</p>
         </div>
         <div class="pain-card">
-          <div class="pain-icon">&#128260;</div>
-          <h3>Rotacion y re-formacion</h3>
+          <div class="pain-stat">Rotación</div>
+          <h3>Formas, se van, repites</h3>
           <p>Contratas, formas durante semanas, y el operario se va a los 3 meses. Vuelta a empezar.</p>
         </div>
       </div>
@@ -321,68 +497,74 @@
   </section>
 
   <!-- Solution -->
-  <section class="solution">
-    <div class="solution-inner">
-      <h2>La solucion: capacitar en vez de filtrar</h2>
-      <p class="lead">MADOBRA cambia el paradigma. En vez de rechazar al 95% de candidatos, los preparamos.</p>
-      <div class="solution-grid">
-        <div class="solution-card">
-          <div class="sol-icon">&#127919;</div>
-          <h3>Diagnostico preciso</h3>
-          <p>La IA analiza exactamente que sabe y que le falta a cada candidato, mapeado a las competencias que TU necesitas.</p>
+  <section class="pad solution">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">La solución</span>
+        <h2>Capacitar en lugar de filtrar.</h2>
+        <p>En vez de rechazar al 95% de candidatos, los preparamos para que lleguen al nivel que necesitas.</p>
+      </div>
+      <div class="sol-grid">
+        <div class="sol-card">
+          <div class="sol-label">01 · Diagnóstico</div>
+          <h3>La IA mide qué sabe cada candidato</h3>
+          <p>Analiza exactamente qué domina y qué le falta, mapeado a las competencias que tú necesitas.</p>
         </div>
-        <div class="solution-card">
-          <div class="sol-icon">&#128218;</div>
-          <h3>Planes a medida</h3>
-          <p>Cada candidato recibe un plan de formacion personalizado: recursos externos para lo general, tus materiales para lo interno.</p>
+        <div class="sol-card highlight">
+          <div class="sol-label">02 · Plan</div>
+          <h3>Formación a medida, no genérica</h3>
+          <p>Cada candidato recibe un plan personalizado: recursos externos para lo general, tus materiales para lo interno.</p>
         </div>
-        <div class="solution-card">
-          <div class="sol-icon">&#128200;</div>
-          <h3>Contrata cuando este listo</h3>
-          <p>Ves el progreso de cada candidato en tiempo real. Contratas cuando alcanza el nivel minimo que tu defines.</p>
+        <div class="sol-card">
+          <div class="sol-label">03 · Decisión</div>
+          <h3>Contrata cuando esté listo</h3>
+          <p>Ves el progreso en tiempo real. Contratas cuando alcanza el nivel mínimo que tú defines.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- How it works -->
-  <section class="how" id="como-funciona">
-    <div class="how-inner">
-      <h2>Como funciona</h2>
-      <div class="how-steps">
+  <section class="pad" id="como-funciona">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>De una vacante abierta a un operario formado en 5 pasos.</h2>
+      </div>
+      <div class="how-grid">
         <div class="how-step">
-          <div class="how-num">1</div>
+          <div class="how-num">01</div>
           <div class="how-text">
             <h3>Define lo que necesitas</h3>
-            <p>Responde un cuestionario guiado sobre el puesto: tareas diarias, herramientas, errores comunes, nivel minimo de competencia. Sube tus SOPs, manuales o videos si los tienes.</p>
+            <p>Cuestionario guiado sobre el puesto: tareas, herramientas, errores comunes, nivel mínimo. Sube tus SOPs, manuales o vídeos si los tienes.</p>
           </div>
         </div>
         <div class="how-step">
-          <div class="how-num">2</div>
+          <div class="how-num">02</div>
           <div class="how-text">
             <h3>La IA extrae las competencias</h3>
-            <p>Nuestro sistema genera automaticamente un mapa de competencias categorizado: conocimiento general (certificaciones estandar), habilidades del rol (formacion practica), y conocimiento interno (tus procesos especificos).</p>
+            <p>Mapa categorizado: conocimiento general (certificaciones), habilidades del rol (formación práctica), y tu conocimiento interno.</p>
           </div>
         </div>
         <div class="how-step">
-          <div class="how-num">3</div>
+          <div class="how-num">03</div>
           <div class="how-text">
-            <h3>Comparte el diagnostico</h3>
-            <p>Envia un enlace a tus candidatos. Cada uno completa un diagnostico de 30 minutos que mide sus competencias frente a lo que necesitas. Sin que tengan que crear cuenta.</p>
+            <h3>Comparte el diagnóstico</h3>
+            <p>Envías un enlace a tus candidatos. Cada uno completa el diagnóstico en 30 minutos. Sin crear cuenta.</p>
           </div>
         </div>
         <div class="how-step">
-          <div class="how-num">4</div>
+          <div class="how-num">04</div>
           <div class="how-text">
-            <h3>Recibe el analisis de gaps</h3>
-            <p>Para cada candidato ves exactamente: que competencias domina, cuales necesita reforzar, y cuales le faltan completamente. Con un plan de formacion concreto, recursos sugeridos, y horas estimadas.</p>
+            <h3>Recibe el análisis de gaps</h3>
+            <p>Qué domina, qué necesita reforzar, qué le falta. Con plan de formación concreto, recursos y horas estimadas.</p>
           </div>
         </div>
         <div class="how-step">
-          <div class="how-num">5</div>
+          <div class="how-num">05</div>
           <div class="how-text">
             <h3>Forma y contrata</h3>
-            <p>El candidato sigue su plan de formacion. Tu ves su progreso. Cuando alcanza el nivel que definiste como "listo para trabajar", contratas con confianza.</p>
+            <p>El candidato sigue su plan. Tú ves su progreso. Cuando alcanza "listo para trabajar", contratas con confianza.</p>
           </div>
         </div>
       </div>
@@ -390,92 +572,123 @@
   </section>
 
   <!-- Numbers -->
-  <section class="numbers">
-    <div class="numbers-inner">
-      <div class="num-item">
-        <div class="num">-60%</div>
-        <p>Tiempo de onboarding</p>
-      </div>
-      <div class="num-item">
-        <div class="num">3x</div>
-        <p>Mas candidatos viables por vacante</p>
-      </div>
-      <div class="num-item">
-        <div class="num">10 min</div>
-        <p>Para definir un puesto</p>
-      </div>
-      <div class="num-item">
-        <div class="num">0</div>
-        <p>Semanas de formacion desperdiciadas</p>
+  <section class="pad numbers">
+    <div class="container">
+      <div class="num-grid">
+        <div class="num-item">
+          <div class="num-kicker">Onboarding</div>
+          <div class="num-value">−60%</div>
+          <p>Tiempo de formación inicial</p>
+        </div>
+        <div class="num-item">
+          <div class="num-kicker">Pipeline</div>
+          <div class="num-value">3×</div>
+          <p>Candidatos viables por vacante</p>
+        </div>
+        <div class="num-item">
+          <div class="num-kicker">Setup</div>
+          <div class="num-value">10 min</div>
+          <p>Para definir un puesto</p>
+        </div>
+        <div class="num-item">
+          <div class="num-kicker">Desperdicio</div>
+          <div class="num-value">0</div>
+          <p>Semanas de formación mal invertida</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Sectors -->
-  <section class="sectors">
-    <h2>Para empresas con puestos operativos cualificados</h2>
-    <p class="lead">Si tu empresa necesita gente con certificaciones, maquinaria, o procesos especificos — MADOBRA es para ti.</p>
-    <div class="sector-tags">
-      <span class="sector-tag">Logistica y Almacen</span>
-      <span class="sector-tag">Manufactura</span>
-      <span class="sector-tag">Construccion</span>
-      <span class="sector-tag">Industria</span>
-      <span class="sector-tag">Automocion</span>
-      <span class="sector-tag">Alimentacion</span>
-      <span class="sector-tag">Instalaciones</span>
-      <span class="sector-tag">Transporte</span>
+  <section class="pad sectors-wrap">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Sectores</span>
+        <h2>Puestos operativos cualificados.</h2>
+        <p>Si tu empresa necesita gente con certificaciones, maquinaria o procesos específicos — MADOBRA es para ti.</p>
+      </div>
+      <div class="sector-tags">
+        <span class="sector-tag">Logística y almacén</span>
+        <span class="sector-tag">Manufactura</span>
+        <span class="sector-tag">Construcción</span>
+        <span class="sector-tag">Industria</span>
+        <span class="sector-tag">Automoción</span>
+        <span class="sector-tag">Alimentación</span>
+        <span class="sector-tag">Instalaciones</span>
+        <span class="sector-tag">Transporte</span>
+      </div>
     </div>
   </section>
 
   <!-- Pricing -->
-  <section class="pricing" id="precios">
-    <h2>Modelo sencillo, sin sorpresas</h2>
-    <p class="lead">Pagas por rol activo. Los candidatos usan la plataforma gratis.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="plan-name">Inicio</div>
-        <div class="plan-price">Gratis</div>
-        <div class="plan-desc">Para probar la plataforma con un puesto.</div>
-        <ul>
-          <li>1 rol activo</li>
-          <li>Diagnosticos ilimitados</li>
-          <li>Mapa de competencias con IA</li>
-          <li>Planes de formacion basicos</li>
-        </ul>
-        <a href="https://app.madobra.com/register" class="btn-primary" style="display:block;text-align:center;">Empezar gratis</a>
+  <section class="pad pricing" id="precios">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Precios</span>
+        <h2>Modelo sencillo, sin sorpresas.</h2>
+        <p>Pagas por rol activo. Los candidatos usan la plataforma gratis.</p>
       </div>
-      <div class="pricing-card featured">
-        <div class="plan-name">Empresa</div>
-        <div class="plan-price">Contactanos</div>
-        <div class="plan-desc">Para empresas con multiples vacantes operativas.</div>
-        <ul>
-          <li>Roles ilimitados</li>
-          <li>Diagnosticos ilimitados</li>
-          <li>Planes de formacion avanzados</li>
-          <li>Seguimiento de progreso candidatos</li>
-          <li>Soporte prioritario</li>
-        </ul>
-        <a href="mailto:info@madobra.com" class="btn-primary" style="display:block;text-align:center;">Solicitar demo</a>
+      <div class="pricing-grid">
+        <div class="plan">
+          <div class="plan-name">Inicio</div>
+          <div class="plan-price">Gratis</div>
+          <div class="plan-desc">Para probar la plataforma con un puesto.</div>
+          <ul class="plan-features">
+            <li>1 rol activo</li>
+            <li>Diagnósticos ilimitados</li>
+            <li>Mapa de competencias con IA</li>
+            <li>Planes de formación básicos</li>
+          </ul>
+          <a href="https://app.madobra.com/register" class="btn btn-secondary btn-md">Empezar gratis</a>
+        </div>
+        <div class="plan featured">
+          <div class="plan-name">Empresa</div>
+          <div class="plan-price">Contáctanos</div>
+          <div class="plan-desc">Para empresas con múltiples vacantes operativas.</div>
+          <ul class="plan-features">
+            <li>Roles ilimitados</li>
+            <li>Diagnósticos ilimitados</li>
+            <li>Planes de formación avanzados</li>
+            <li>Seguimiento de progreso</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <a href="mailto:info@madobra.com" class="btn btn-primary btn-md">Solicitar demo</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta">
-    <h2>Tu proximo operario ya existe.<br>Solo le falta formacion.</h2>
-    <p>Deja de descartar candidatos. Empieza a capacitarlos y reduce tu tiempo de contratacion desde esta semana.</p>
-    <a href="https://app.madobra.com/register" class="btn-white">Empieza gratis ahora</a>
+  <section class="pad cta-block">
+    <div class="container cta-inner">
+      <h2>Tu próximo operario ya existe.<br>Solo le falta formación.</h2>
+      <p>Deja de descartar candidatos. Empieza a capacitarlos y reduce tu tiempo de contratación desde esta semana.</p>
+      <a href="https://app.madobra.com/register" class="btn btn-primary btn-lg">Empieza gratis ahora</a>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-copy">&copy; 2026 MADOBRA — GUT PROJECTS, S.L.</div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="/" class="footer-brand" aria-label="MADOBRA">
+        <svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="32" fill="#F58021"/>
+          <path d="M 16 48 L 16 17.45 L 24.73 17.45 L 32 32 L 39.27 17.45 L 48 17.45 L 48 48 L 42.18 48 L 42.18 26.18 L 33.45 43.64 L 30.55 43.64 L 21.82 26.18 L 21.82 48 Z" fill="#0E2340"/>
+          <path d="M 29.09 37.82 L 32 40.73 L 36.36 34.91" fill="none" stroke="#F3EFE3" stroke-width="2.91" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">madobra</span>
+      </a>
       <div class="footer-links">
         <a href="candidatos.html">Soy candidato</a>
+        <a href="/terminos.html">Términos</a>
+        <a href="/privacidad.html">Privacidad</a>
         <a href="mailto:info@madobra.com">info@madobra.com</a>
         <a href="https://app.madobra.com/login">Entrar</a>
       </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 MADOBRA</span>
+      <span>Madrid · ES</span>
     </div>
   </footer>
 

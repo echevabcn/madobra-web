@@ -2,3 +2,7 @@
 *.swp
 .vscode/
 .idea/
+
+# Brand assets and design system — kept locally as reference, never deployed
+Design/
+
