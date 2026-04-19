@@ -12,8 +12,8 @@
     gtag('js', new Date());
     gtag('config', 'G-8JDXSJ0FJF');
   </script>
-  <title>Términos y Condiciones — MADOBRA</title>
-  <meta name="description" content="Términos y Condiciones de uso de la plataforma MADOBRA para empresas y candidatos.">
+  <title>Términos y condiciones — MADOBRA</title>
+  <meta name="description" content="Términos y condiciones de uso de la plataforma MADOBRA para empresas y candidatos.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0E2340">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -30,127 +30,229 @@
 
   <style>
     :root {
-      --navy-500: #0E2340;
-      --navy-600: #0A1A30;
-      --amber-500: #F58021;
-      --amber-700: #B5570F;
-      --cream-100: #F3EFE3;
-      --steel-100: #E5E8EC;
-      --steel-300: #A8B1BD;
-      --steel-500: #5A6778;
-      --steel-700: #2A3648;
-
-      --canvas:  var(--cream-100);
-      --surface: #FFFFFF;
-      --text-1:  var(--navy-500);
-      --text-2:  var(--steel-500);
-      --border:  var(--steel-100);
-
-      --sh-focus: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--amber-500);
-      --r-sm: 4px;
-      --r-lg: 8px;
+      --navy-500: #0E2340; --navy-600: #0A1A30;
+      --amber-500: #F58021; --amber-700: #B5570F;
+      --cream-50: #FAF8F1; --cream-100: #F3EFE3;
+      --steel-100: #E5E8EC; --steel-300: #A8B1BD;
+      --steel-500: #5A6778; --steel-700: #2A3648;
+      --canvas: var(--cream-100); --surface: #FFFFFF;
+      --text-1: var(--navy-500); --text-2: var(--steel-500); --text-3: var(--steel-300);
+      --border: var(--steel-100);
+      --sh-focus: 0 0 0 2px var(--canvas), 0 0 0 4px var(--amber-500);
+      --r-sm: 4px; --r-lg: 8px;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+      --hairline: 0.5px;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 16px; line-height: 24px;
+      font-family: var(--sans); font-size: 16px; line-height: 24px;
       color: var(--text-1); background: var(--canvas);
+      font-feature-settings: 'ss01' on, 'cv11' on;
       -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      opacity: 0.04; mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.055 0 0 0 0 0.137 0 0 0 0 0.251 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
     }
     a { color: var(--amber-700); text-decoration: underline; text-underline-offset: 3px; }
-    a:hover { color: var(--amber-500); }
+    a:hover { color: var(--amber-600); }
+    ::selection { background: var(--amber-500); color: var(--navy-500); }
 
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
-    @media (min-width: 640px)  { .container { padding: 0 32px; } }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+    @media (min-width: 640px)  { .container { padding: 0 40px; } }
     @media (min-width: 1024px) { .container { padding: 0 64px; } }
 
+    /* Scroll progress */
+    .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 200; pointer-events: none; }
+    .scroll-progress::after {
+      content: ""; display: block; height: 100%; width: 100%;
+      background: var(--amber-500); transform-origin: 0 50%; transform: scaleX(0);
+    }
+    @supports (animation-timeline: scroll()) {
+      .scroll-progress::after { animation: progress linear both; animation-timeline: scroll(root block); }
+      @keyframes progress { to { transform: scaleX(1); } }
+    }
+
+    /* Nav */
     nav.site-nav {
-      background: rgba(243, 239, 227, 0.85);
-      backdrop-filter: saturate(180%) blur(10px);
-      -webkit-backdrop-filter: saturate(180%) blur(10px);
-      border-bottom: 0.5px solid var(--border);
+      background: rgba(243, 239, 227, 0.82);
+      backdrop-filter: saturate(160%) blur(14px);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: var(--hairline) solid var(--border);
       position: sticky; top: 0; z-index: 100;
     }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--navy-500); text-decoration: none; }
-    .brand-name { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
-    .nav-links { display: flex; gap: 20px; align-items: center; }
-    .nav-links a { color: var(--text-2); font-size: 13px; font-weight: 500; text-decoration: none; }
-    .nav-links a:hover { color: var(--text-1); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: inline-flex; align-items: baseline; gap: 10px; color: var(--navy-500); text-decoration: none; }
+    .brand svg { align-self: center; display: block; }
+    .brand-name { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; }
+    .brand-stamp {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+      color: var(--text-3); padding-left: 8px; margin-left: 6px;
+      border-left: var(--hairline) solid var(--border); display: none;
+    }
+    @media (min-width: 900px) { .brand-stamp { display: inline-block; } }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-link {
+      color: var(--text-2); font-size: 13px; font-weight: 500;
+      position: relative; transition: color 120ms ease; text-decoration: none;
+    }
+    .nav-link:hover { color: var(--text-1); }
+    .nav-link::before {
+      content: ""; position: absolute; left: -10px; top: 50%;
+      width: 3px; height: 3px; border-radius: 50%; background: var(--amber-500);
+      opacity: 0; transition: opacity 120ms ease; transform: translateY(-50%);
+    }
+    .nav-link:hover::before { opacity: 1; }
 
-    main.doc {
-      max-width: 760px; margin: 0 auto;
-      padding: 56px 16px 72px;
-    }
-    @media (min-width: 640px)  { main.doc { padding: 72px 32px 96px; } }
-    @media (min-width: 1024px) { main.doc { padding: 96px 64px 120px; } }
+    /* ─────────── DOC HEADER ─────────── */
+    .doc-wrap { max-width: 960px; margin: 0 auto; padding: 48px 20px 72px; position: relative; z-index: 1; }
+    @media (min-width: 640px) { .doc-wrap { padding: 64px 40px 96px; } }
+    @media (min-width: 1024px) { .doc-wrap { padding: 88px 64px 112px; } }
 
-    .eyebrow {
-      font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-      font-size: 11px; color: var(--text-2);
-      letter-spacing: 0.14em; text-transform: uppercase;
-      display: inline-block; margin-bottom: 16px;
+    .doc-header { margin-bottom: 48px; border-bottom: var(--hairline) solid var(--border); padding-bottom: 40px; }
+    .doc-kicker {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--text-2);
+      display: inline-flex; align-items: center; gap: 12px; margin-bottom: 24px;
     }
-    h1 {
-      font-size: 36px; line-height: 40px;
-      font-weight: 600; letter-spacing: -0.02em;
-      color: var(--navy-500); margin-bottom: 8px;
+    .doc-kicker::before { content: ""; width: 28px; height: 1px; background: var(--amber-500); }
+    h1.doc-title {
+      font-size: 40px; line-height: 44px; font-weight: 600;
+      letter-spacing: -0.03em; color: var(--navy-500); margin-bottom: 32px;
     }
-    @media (min-width: 1024px) { h1 { font-size: 44px; line-height: 48px; } }
-    .updated {
-      font-family: 'JetBrains Mono', monospace; font-size: 12px;
-      color: var(--text-2); letter-spacing: 0.06em;
-      margin-bottom: 40px;
+    @media (min-width: 1024px) { h1.doc-title { font-size: 56px; line-height: 60px; } }
+
+    .doc-meta {
+      display: grid; grid-template-columns: 1fr; gap: 20px;
+      padding-top: 24px; border-top: var(--hairline) dashed var(--border);
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    @media (min-width: 640px) { .doc-meta { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+    .doc-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .doc-meta-label { color: var(--text-3); }
+    .doc-meta-value { color: var(--navy-500); font-weight: 500; letter-spacing: 0.04em; }
+
+    /* ─────────── TOC ─────────── */
+    .toc {
+      background: var(--surface); border: var(--hairline) solid var(--border);
+      border-radius: var(--r-lg); padding: 24px; margin-bottom: 48px;
+    }
+    .toc-label {
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-2); margin-bottom: 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .toc-label .count { color: var(--amber-600); font-weight: 500; }
+    .toc ol {
+      list-style: none; counter-reset: toc;
+      column-count: 1; column-gap: 24px;
+    }
+    @media (min-width: 640px) { .toc ol { column-count: 2; } }
+    .toc li {
+      counter-increment: toc; position: relative; padding: 6px 0 6px 38px;
+      font-size: 14px; line-height: 20px; break-inside: avoid;
+    }
+    .toc li::before {
+      content: counter(toc, decimal-leading-zero);
+      position: absolute; left: 0; top: 6px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+      color: var(--text-3);
+    }
+    .toc li a { color: var(--navy-500); text-decoration: none; transition: color 120ms ease; }
+    .toc li a:hover { color: var(--amber-700); }
+
+    /* ─────────── BODY ─────────── */
+    .intro {
+      font-size: 17px; line-height: 28px; color: var(--steel-700);
+      margin-bottom: 32px; max-width: 66ch;
+      padding-left: 16px; border-left: 2px solid var(--amber-500);
     }
     h2 {
       font-size: 20px; line-height: 26px; font-weight: 600;
       letter-spacing: -0.01em; color: var(--navy-500);
-      margin: 40px 0 12px;
-      padding-top: 24px; border-top: 0.5px solid var(--border);
+      margin: 48px 0 14px; padding-top: 28px;
+      border-top: var(--hairline) solid var(--border);
+      display: flex; align-items: baseline; gap: 14px;
+      scroll-margin-top: 80px;
     }
-    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 32px; }
+    h2 .n {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+      color: var(--amber-600); font-weight: 500; flex-shrink: 0;
+      padding-top: 3px;
+    }
+    @media (min-width: 900px) {
+      h2 .n { position: absolute; margin-left: -96px; padding-top: 4px; }
+      h2 { position: relative; padding-left: 0; }
+    }
+    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 24px; }
     p, li { color: var(--text-1); font-size: 16px; line-height: 26px; }
     p { margin-bottom: 12px; max-width: 66ch; }
-    ul { margin: 4px 0 16px 20px; }
-    li { margin-bottom: 4px; }
+    ul { margin: 6px 0 18px 22px; }
+    li { margin-bottom: 6px; }
     strong { font-weight: 600; color: var(--navy-500); }
-    .intro {
-      font-size: 17px; line-height: 28px; color: var(--text-2);
-      margin-bottom: 16px; max-width: 66ch;
-    }
-    .contact-card {
-      background: var(--surface); border: 0.5px solid var(--border);
-      border-radius: var(--r-lg); padding: 20px 24px;
-      margin: 4px 0 16px; font-family: 'JetBrains Mono', monospace;
-      font-size: 13px; line-height: 22px; color: var(--navy-500);
-    }
-    .contact-card a { font-family: 'Inter', sans-serif; }
 
-    footer.site-footer {
-      background: var(--navy-600); color: var(--steel-300);
-      padding: 40px 0 28px;
+    .contact-card {
+      background: var(--surface); border: var(--hairline) solid var(--border);
+      border-radius: var(--r-lg); padding: 22px 26px;
+      margin: 6px 0 18px; font-family: var(--mono);
+      font-size: 13px; line-height: 22px; color: var(--navy-500);
+      position: relative; overflow: hidden;
     }
-    .footer-inner {
-      display: flex; flex-direction: column; gap: 20px;
-      justify-content: space-between; align-items: flex-start;
+    .contact-card::before {
+      content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--amber-500);
     }
-    @media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; } }
-    .footer-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--cream-100); text-decoration: none; }
+    .contact-card a { color: var(--amber-700); font-family: var(--sans); text-decoration: underline; text-underline-offset: 3px; }
+    .contact-card strong { color: var(--navy-500); letter-spacing: -0.01em; }
+
+    /* Back to top */
+    .back-top {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 64px; padding-top: 20px;
+      border-top: var(--hairline) solid var(--border);
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-2);
+      text-decoration: none; transition: color 120ms ease;
+    }
+    .back-top:hover { color: var(--amber-700); }
+    .back-top::before { content: "↑"; font-size: 14px; line-height: 1; }
+
+    /* Footer */
+    footer.site-footer { background: var(--navy-600); color: var(--steel-300); padding: 56px 0 20px; }
+    .footer-top {
+      display: grid; grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px;
+      border-bottom: var(--hairline) solid rgba(243, 239, 227, 0.12);
+    }
+    @media (min-width: 768px) { .footer-top { grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 48px; } }
+    .footer-col h4 {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--amber-500); margin-bottom: 14px; font-weight: 500;
+    }
+    .footer-col a, .footer-col p {
+      display: block; color: var(--steel-300); font-size: 13.5px; line-height: 22px;
+      margin-bottom: 6px; transition: color 120ms ease; text-decoration: none;
+    }
+    .footer-col a:hover { color: var(--cream-100); }
+    .footer-col .lede { font-size: 14px; line-height: 22px; color: var(--steel-300); max-width: 36ch; margin-top: 12px; }
+    .footer-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--cream-100); margin-bottom: 14px; text-decoration: none; }
     .footer-brand .brand-name { color: var(--cream-100); font-size: 16px; }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; }
-    .footer-links a { color: var(--steel-300); text-decoration: none; }
-    .footer-links a:hover { color: var(--cream-100); }
-    .footer-meta {
-      max-width: 1280px; margin: 20px auto 0; padding: 16px 16px 0;
-      border-top: 0.5px solid var(--steel-700);
+    .colophon {
+      margin-top: 20px; padding-top: 18px;
       display: flex; justify-content: space-between; align-items: center;
-      font-family: 'JetBrains Mono', monospace; font-size: 11px;
-      letter-spacing: 0.08em; color: var(--steel-500); flex-wrap: wrap; gap: 8px;
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--steel-500); flex-wrap: wrap; gap: 12px;
     }
-    @media (min-width: 640px)  { .footer-meta { padding: 16px 32px 0; } }
-    @media (min-width: 1024px) { .footer-meta { padding: 16px 64px 0; } }
+    .colophon span + span { position: relative; padding-left: 16px; }
+    .colophon span + span::before {
+      content: "·"; position: absolute; left: 4px; top: 50%; transform: translateY(-50%);
+      color: var(--steel-700);
+    }
 
     @media (max-width: 767px) {
       .nav-links { gap: 12px; }
@@ -158,6 +260,8 @@
   </style>
 </head>
 <body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <nav class="site-nav">
     <div class="container nav-inner">
@@ -168,22 +272,62 @@
           <path d="M 29.09 37.82 L 32 40.73 L 36.36 34.91" fill="none" stroke="#F3EFE3" stroke-width="2.91" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span class="brand-name">madobra</span>
+        <span class="brand-stamp">LEGAL · DOC 02</span>
       </a>
       <div class="nav-links">
-        <a href="/">Inicio</a>
-        <a href="/privacidad.html">Privacidad</a>
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="/privacidad.html" class="nav-link">Privacidad</a>
       </div>
     </div>
   </nav>
 
-  <main class="doc">
-    <span class="eyebrow">Documento legal</span>
-    <h1>Términos y Condiciones</h1>
-    <p class="updated">Última actualización · 19 abril 2026</p>
+  <main class="doc-wrap" id="top">
+    <header class="doc-header">
+      <div class="doc-kicker">Documento legal · DOC 02</div>
+      <h1 class="doc-title">Términos y condiciones</h1>
+      <div class="doc-meta">
+        <div class="doc-meta-item">
+          <span class="doc-meta-label">Versión</span>
+          <span class="doc-meta-value">v2026.04.19</span>
+        </div>
+        <div class="doc-meta-item">
+          <span class="doc-meta-label">Vigente desde</span>
+          <span class="doc-meta-value">19 abril 2026</span>
+        </div>
+        <div class="doc-meta-item">
+          <span class="doc-meta-label">Jurisdicción</span>
+          <span class="doc-meta-value">Madrid · España</span>
+        </div>
+        <div class="doc-meta-item">
+          <span class="doc-meta-label">Idioma</span>
+          <span class="doc-meta-value">Español (ES)</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Índice">
+      <div class="toc-label"><span>Índice</span><span class="count">14 secciones</span></div>
+      <ol>
+        <li><a href="#s1">Identificación del prestador</a></li>
+        <li><a href="#s2">Objeto</a></li>
+        <li><a href="#s3">Aceptación</a></li>
+        <li><a href="#s4">Cuentas y registro</a></li>
+        <li><a href="#s5">Uso aceptable</a></li>
+        <li><a href="#s6">Planes y pagos</a></li>
+        <li><a href="#s7">Contenidos del usuario</a></li>
+        <li><a href="#s8">Propiedad intelectual</a></li>
+        <li><a href="#s9">Inteligencia artificial</a></li>
+        <li><a href="#s10">Disponibilidad del servicio</a></li>
+        <li><a href="#s11">Limitación de responsabilidad</a></li>
+        <li><a href="#s12">Terminación</a></li>
+        <li><a href="#s13">Modificaciones</a></li>
+        <li><a href="#s14">Ley aplicable y jurisdicción</a></li>
+      </ol>
+    </nav>
 
     <p class="intro">Estos términos regulan el acceso y uso de la plataforma MADOBRA. Al registrarte o usar el servicio, aceptas estos términos y nuestra <a href="/privacidad.html">Política de Privacidad</a>.</p>
 
-    <h2>1. Identificación del prestador</h2>
+    <h2 id="s1"><span class="n">§ 01</span>Identificación del prestador</h2>
     <div class="contact-card">
       <strong>GUT PROJECTS, S.L.</strong> — NIF B26958850<br>
       C/ Cartagena 14, 28028 Madrid (España)<br>
@@ -191,13 +335,13 @@
       En adelante, "MADOBRA".
     </div>
 
-    <h2>2. Objeto</h2>
+    <h2 id="s2"><span class="n">§ 02</span>Objeto</h2>
     <p>MADOBRA es una plataforma B2B que permite a empresas diagnosticar competencias de candidatos para puestos operativos, generar planes de formación personalizados y hacer seguimiento del progreso. Los candidatos pueden crear un perfil profesional, completar diagnósticos y acceder a planes de formación.</p>
 
-    <h2>3. Aceptación</h2>
+    <h2 id="s3"><span class="n">§ 03</span>Aceptación</h2>
     <p>Al registrarte declaras ser mayor de edad (16 años para candidatos) y tener capacidad legal suficiente. Si actúas en nombre de una empresa, declaras estar autorizado para vincularla a estos términos.</p>
 
-    <h2>4. Cuentas y registro</h2>
+    <h2 id="s4"><span class="n">§ 04</span>Cuentas y registro</h2>
     <ul>
       <li>Debes proporcionar información veraz, exacta y mantenerla actualizada.</li>
       <li>Eres responsable de la custodia de tus credenciales y de toda actividad realizada bajo tu cuenta.</li>
@@ -205,7 +349,7 @@
       <li>Las cuentas son personales e intransferibles.</li>
     </ul>
 
-    <h2>5. Uso aceptable</h2>
+    <h2 id="s5"><span class="n">§ 05</span>Uso aceptable</h2>
     <p>No está permitido:</p>
     <ul>
       <li>Utilizar la plataforma con fines ilícitos, fraudulentos o discriminatorios.</li>
@@ -215,7 +359,7 @@
       <li>Suplantar a otra persona o entidad.</li>
     </ul>
 
-    <h2>6. Planes y pagos</h2>
+    <h2 id="s6"><span class="n">§ 06</span>Planes y pagos</h2>
     <ul>
       <li>MADOBRA ofrece planes gratuitos y planes de pago descritos en la web.</li>
       <li>Los precios se muestran sin IVA salvo indicación en contrario.</li>
@@ -224,19 +368,19 @@
       <li>Los candidatos usan la plataforma de forma totalmente gratuita.</li>
     </ul>
 
-    <h2>7. Contenidos del usuario</h2>
+    <h2 id="s7"><span class="n">§ 07</span>Contenidos del usuario</h2>
     <p>Conservas la titularidad de los materiales que subas (documentos, manuales, SOPs, datos). Nos concedes una licencia limitada, no exclusiva y mundial para alojar, procesar y mostrar dichos contenidos con el único fin de prestar el servicio. Eres responsable de contar con los permisos y bases legales necesarios para compartirlos.</p>
 
-    <h2>8. Propiedad intelectual</h2>
+    <h2 id="s8"><span class="n">§ 08</span>Propiedad intelectual</h2>
     <p>La plataforma, incluyendo software, interfaz, marcas, logos, contenidos y documentación, es propiedad de GUT PROJECTS, S.L. o de sus licenciantes, y está protegida por la normativa de propiedad intelectual e industrial. No se concede ningún derecho más allá del uso del servicio conforme a estos términos.</p>
 
-    <h2>9. Inteligencia artificial</h2>
+    <h2 id="s9"><span class="n">§ 09</span>Inteligencia artificial</h2>
     <p>El servicio incluye análisis automatizados y generación de contenidos mediante modelos de inteligencia artificial. Los resultados (mapas de competencias, diagnósticos, planes de formación) son <strong>orientativos</strong> y pueden contener imprecisiones. No sustituyen la evaluación humana: la decisión final de contratación, formación o cualquier otra corresponde siempre al empleador.</p>
 
-    <h2>10. Disponibilidad del servicio</h2>
+    <h2 id="s10"><span class="n">§ 10</span>Disponibilidad del servicio</h2>
     <p>El servicio se presta "tal cual" y "según disponibilidad". Podemos realizar tareas de mantenimiento, actualizaciones o cambios, procurando minimizar el impacto. No garantizamos que el servicio esté libre de errores o interrupciones.</p>
 
-    <h2>11. Limitación de responsabilidad</h2>
+    <h2 id="s11"><span class="n">§ 11</span>Limitación de responsabilidad</h2>
     <p>En la máxima medida permitida por la ley, MADOBRA no será responsable de:</p>
     <ul>
       <li>Daños indirectos, lucro cesante, pérdida de datos o de oportunidades.</li>
@@ -246,36 +390,52 @@
     </ul>
     <p>La responsabilidad total acumulada de MADOBRA se limita al importe efectivamente pagado por el usuario en los 12 meses anteriores al hecho que motive la reclamación.</p>
 
-    <h2>12. Terminación</h2>
+    <h2 id="s12"><span class="n">§ 12</span>Terminación</h2>
     <p>Puedes dejar de usar el servicio en cualquier momento. MADOBRA podrá suspender o cancelar cuentas que incumplan estos términos, previa notificación cuando sea razonable. Los efectos del cese de la cuenta y conservación de datos se regulan en la Política de Privacidad.</p>
 
-    <h2>13. Modificaciones</h2>
+    <h2 id="s13"><span class="n">§ 13</span>Modificaciones</h2>
     <p>Podemos actualizar estos términos. Publicaremos la versión vigente en esta página e indicaremos la fecha. Los cambios sustanciales se comunicarán a los usuarios registrados con antelación razonable. El uso continuado tras la entrada en vigor supone aceptación.</p>
 
-    <h2>14. Ley aplicable y jurisdicción</h2>
+    <h2 id="s14"><span class="n">§ 14</span>Ley aplicable y jurisdicción</h2>
     <p>Estos términos se rigen por la legislación española. Cualquier controversia se someterá a los Juzgados y Tribunales de Madrid, sin perjuicio de los derechos imperativos que la normativa de consumo reconozca a los usuarios.</p>
+
+    <a href="#top" class="back-top">Volver al inicio</a>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a href="/" class="footer-brand" aria-label="MADOBRA">
-        <svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="32" r="32" fill="#F58021"/>
-          <path d="M 16 48 L 16 17.45 L 24.73 17.45 L 32 32 L 39.27 17.45 L 48 17.45 L 48 48 L 42.18 48 L 42.18 26.18 L 33.45 43.64 L 30.55 43.64 L 21.82 26.18 L 21.82 48 Z" fill="#0E2340"/>
-          <path d="M 29.09 37.82 L 32 40.73 L 36.36 34.91" fill="none" stroke="#F3EFE3" stroke-width="2.91" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="brand-name">madobra</span>
-      </a>
-      <div class="footer-links">
-        <a href="/">Inicio</a>
-        <a href="/candidatos.html">Candidatos</a>
-        <a href="/privacidad.html">Privacidad</a>
-        <a href="mailto:info@madobra.com">info@madobra.com</a>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="/" class="footer-brand" aria-label="MADOBRA">
+            <svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="32" fill="#F58021"/>
+              <path d="M 16 48 L 16 17.45 L 24.73 17.45 L 32 32 L 39.27 17.45 L 48 17.45 L 48 48 L 42.18 48 L 42.18 26.18 L 33.45 43.64 L 30.55 43.64 L 21.82 26.18 L 21.82 48 Z" fill="#0E2340"/>
+              <path d="M 29.09 37.82 L 32 40.73 L 36.36 34.91" fill="none" stroke="#F3EFE3" stroke-width="2.91" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="brand-name">madobra</span>
+          </a>
+          <p class="lede">Plataforma B2B para capacitar candidatos operativos.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <a href="/">Inicio</a>
+          <a href="/candidatos.html">Candidatos</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/terminos.html">Términos y condiciones</a>
+          <a href="/privacidad.html">Privacidad</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="mailto:info@madobra.com">info@madobra.com</a>
+        </div>
       </div>
-    </div>
-    <div class="footer-meta">
-      <span>© 2026 MADOBRA</span>
-      <span>Madrid · ES</span>
+      <div class="colophon">
+        <span>© 2026 MADOBRA</span>
+        <span>Madrid · ES</span>
+        <span>DOC 02 · v2026.04.19</span>
+      </div>
     </div>
   </footer>
 
