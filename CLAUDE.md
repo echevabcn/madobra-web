@@ -52,6 +52,37 @@ The site is styled as an **industrial technical publication** — a field report
 - Legal link labels: use **"Términos y condiciones"** (not "Términos"). Appears in all footer `Legal` columns.
 - Privacy link: **"Privacidad"**.
 
+## Pricing model (packs-only for launch)
+
+Source of truth for the full pricing spec: `/Users/alvaroecheverria/Dropbox/Claude/madobra/madobra_pricing_spec.md` (sibling repo, not in this one).
+
+**Unidad de valor**: 1 crédito = 1 candidato diagnosticado + plan de formación personalizado listo. Los candidatos siempre usan la plataforma gratis.
+
+**Visible on web — three credit packs only:**
+
+| Pack | Precio | Créditos | €/crédito | CTA |
+|---|---|---|---|---|
+| Starter | 39 € | 5 | 7,80 € | `app.madobra.com/register?plan=starter` |
+| Growth | 99 € | 15 | 6,60 € | `app.madobra.com/register?plan=growth` |
+| Scale (MÁS POPULAR) | 249 € | 50 | 4,98 € | `app.madobra.com/register?plan=scale` |
+
+- One-time purchase, no expiration, transferibles entre usuarios de la misma cuenta.
+- Trust row + hero microcopy: "1 crédito gratis al registrarte, sin tarjeta".
+
+**Hidden from web (deliberate — not activated yet):**
+
+- **Pro subscription** (79 €/mes · 790 €/año, 20 créditos/mes rolling 3 meses, + roles personalizados, seguimiento de progreso, alertas de caducidad, hasta 3 usuarios).
+- **Enterprise / ETT** (pricing a medida con API, multi-empresa, gestor dedicado, SLA).
+
+Both exist in the full spec and will be surfaced later. When reactivating, retrieve the UI + CSS + JSON-LD `Offer` entries + FAQ copy from commit `7b5ab9f` (lived briefly on 2026-04-20 and was removed in `a32033c` the same day).
+
+**Where pricing lives in this repo (keep these in sync if numbers change):**
+
+- `index.html` — pricing section (`#precios`), CSS `.pricing-grid / .plan / .pricing-trust`, JSON-LD `SoftwareApplication.offers` (3 Offer entries), FAQ answer to `¿Cuánto cuesta MADOBRA?`, hero microcopy under the primary CTA ("1 crédito gratis al registrarte").
+- `llms.txt` — `## Modelo de precios` block.
+
+**App alignment pending**: if `app.madobra.com` still shows Pro or Enterprise anywhere (pricing page, registration, billing), those plans should be hidden until activated so web and app agree.
+
 ## Pending / to review
 
 - **Legal pages content (`terminos.html`, `privacidad.html`)**
@@ -105,6 +136,8 @@ All favicons were rasterized from `Design/madobra-brand-assets/png/05-seal-alone
 - `528dcea` editorial pass (spec-sheet/carnet heroes, document-framed legal pages, "Términos y condiciones" rename)
 - `0e66368` SEO hygiene: llms.txt email, sitemap lastmod refresh, Offer schema (availability + url)
 - SEO audit round 2: legal pages OG/Twitter images, WebPage schema, hreflang; index HowTo schema; sector-specific ES keywords; `@supports` fallback for backdrop-filter; paper grain disabled below 768px; aria-label on carnet avatar
+- `7b5ab9f` pricing switched from placeholder Inicio/Empresa plans to the credit model from the pricing spec (3 packs + Pro mensual/anual + Enterprise)
+- `a32033c` pricing trimmed to packs-only for launch — Pro subscription and Enterprise strip removed from UI, CSS, JSON-LD `Offer`, FAQ and `llms.txt`
 
 ## Structured data inventory
 
