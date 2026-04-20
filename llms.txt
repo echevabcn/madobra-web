@@ -36,15 +36,12 @@ El 72% de las empresas industriales en Europa no encuentran perfiles operativos 
 
 ## Modelo de precios
 
-Modelo híbrido créditos + suscripción. 1 crédito = 1 candidato diagnosticado con plan de formación personalizado listo. Los candidatos siempre usan la plataforma gratis.
+Modelo por créditos. 1 crédito = 1 candidato diagnosticado con plan de formación personalizado listo. Los candidatos siempre usan la plataforma gratis.
 
 - **Prueba gratuita**: 1 crédito gratis al registrarse, sin tarjeta
 - **Pack Starter**: 39 € — 5 créditos (7,80 €/crédito). Sin caducidad.
 - **Pack Growth**: 99 € — 15 créditos (6,60 €/crédito). Sin caducidad.
 - **Pack Scale**: 249 € — 50 créditos (4,98 €/crédito). Transferibles entre usuarios de la cuenta. Sin caducidad. El pack más popular.
-- **Pro mensual**: 79 €/mes — incluye 20 créditos/mes (rolling 3 meses), roles personalizados, seguimiento de progreso, alertas de caducidad de certificaciones y hasta 3 usuarios. Cancela cuando quieras.
-- **Pro anual**: 790 €/año — equivale a 10 meses (240 créditos al año) con las mismas features que Pro mensual.
-- **Enterprise / ETT**: pricing a medida con API de integración con ATS, multi-empresa, gestor de cuenta dedicado y SLA contractual. Contrato anual recomendado.
 
 ## Contacto
 
