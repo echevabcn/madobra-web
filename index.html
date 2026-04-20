@@ -565,12 +565,12 @@
     .pricing { background: var(--surface); border-top: var(--hairline) solid var(--border); border-bottom: var(--hairline) solid var(--border); }
     .pricing-grid {
       display: grid; grid-template-columns: 1fr; gap: 0;
-      max-width: 900px; margin: 0 auto;
+      max-width: 1080px; margin: 0 auto;
       border-top: var(--hairline) solid var(--border);
     }
-    @media (min-width: 768px) { .pricing-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 768px) { .pricing-grid { grid-template-columns: 1fr 1fr 1fr; } }
     .plan {
-      padding: 36px 32px;
+      padding: 36px 28px;
       border-right: var(--hairline) solid var(--border);
       border-bottom: var(--hairline) solid var(--border);
       display: flex; flex-direction: column;
@@ -593,11 +593,21 @@
     }
     .plan-price {
       font-size: 40px; line-height: 44px; font-weight: 600;
-      letter-spacing: -0.03em; color: var(--navy-500); margin-bottom: 10px;
+      letter-spacing: -0.03em; color: var(--navy-500); margin-bottom: 4px;
       font-variant-numeric: tabular-nums;
+      display: flex; align-items: baseline; gap: 8px;
     }
-    .plan-desc { font-size: 14px; line-height: 22px; color: var(--text-2); margin-bottom: 28px; max-width: 36ch; }
-    .plan-features { list-style: none; flex: 1; margin-bottom: 32px; border-top: var(--hairline) dashed var(--border); }
+    .plan-price .unit {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-2); font-weight: 500;
+    }
+    .plan-price-note {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-2);
+      margin-bottom: 18px; font-variant-numeric: tabular-nums;
+    }
+    .plan-desc { font-size: 14px; line-height: 22px; color: var(--text-2); margin-bottom: 24px; max-width: 36ch; }
+    .plan-features { list-style: none; flex: 1; margin-bottom: 28px; border-top: var(--hairline) dashed var(--border); }
     .plan-features li {
       font-size: 14px; line-height: 22px; color: var(--navy-500);
       padding: 10px 0 10px 28px; position: relative;
@@ -606,6 +616,86 @@
     .plan-features li::before {
       content: ""; position: absolute; left: 4px; top: 19px;
       width: 12px; height: 1px; background: var(--amber-500);
+    }
+
+    /* Pro subscription block */
+    .pricing-pro {
+      max-width: 1080px; margin: 0 auto;
+      border-left: var(--hairline) solid var(--border);
+      border-right: var(--hairline) solid var(--border);
+      border-bottom: var(--hairline) solid var(--border);
+      background: var(--bg);
+      display: grid; grid-template-columns: 1fr; gap: 0;
+    }
+    @media (min-width: 768px) { .pricing-pro { grid-template-columns: 1.1fr 1fr; } }
+    .pro-left { padding: 32px 28px; border-bottom: var(--hairline) solid var(--border); }
+    @media (min-width: 768px) {
+      .pro-left { border-bottom: 0; border-right: var(--hairline) solid var(--border); }
+    }
+    .pro-right { padding: 32px 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+    .pro-tag {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--amber-700); margin-bottom: 10px;
+    }
+    .pro-title { font-size: 22px; line-height: 28px; font-weight: 600; color: var(--navy-500); letter-spacing: -0.02em; margin-bottom: 6px; }
+    .pro-sub { font-size: 14px; line-height: 22px; color: var(--text-2); margin-bottom: 20px; max-width: 48ch; }
+    .pro-price-row { display: flex; flex-wrap: wrap; gap: 28px; align-items: baseline; }
+    .pro-price-row .pro-price {
+      font-size: 34px; line-height: 38px; font-weight: 600;
+      letter-spacing: -0.03em; color: var(--navy-500);
+      font-variant-numeric: tabular-nums;
+      display: flex; align-items: baseline; gap: 8px;
+    }
+    .pro-price .unit {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-2); font-weight: 500;
+    }
+    .pro-price-annual {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-2);
+      font-variant-numeric: tabular-nums;
+    }
+    .pro-price-annual strong { color: var(--navy-500); font-weight: 600; }
+    .pro-features { list-style: none; display: grid; grid-template-columns: 1fr; gap: 6px; }
+    @media (min-width: 480px) { .pro-features { grid-template-columns: 1fr 1fr; } }
+    .pro-features li {
+      font-size: 13px; line-height: 20px; color: var(--navy-500);
+      padding-left: 18px; position: relative;
+    }
+    .pro-features li::before {
+      content: ""; position: absolute; left: 0; top: 9px;
+      width: 10px; height: 1px; background: var(--amber-500);
+    }
+
+    /* Enterprise strip */
+    .pricing-enterprise {
+      max-width: 1080px; margin: 0 auto;
+      border-left: var(--hairline) solid var(--border);
+      border-right: var(--hairline) solid var(--border);
+      border-bottom: var(--hairline) solid var(--border);
+      padding: 24px 28px;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 16px;
+      background: var(--surface);
+    }
+    .enterprise-copy { display: flex; flex-direction: column; gap: 4px; min-width: 280px; }
+    .enterprise-copy .tag {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-2);
+    }
+    .enterprise-copy .title { font-size: 15px; line-height: 22px; color: var(--navy-500); font-weight: 500; max-width: 62ch; }
+
+    /* Trust row */
+    .pricing-trust {
+      max-width: 1080px; margin: 28px auto 0;
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 8px 28px; padding: 0 12px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-2);
+    }
+    .pricing-trust span { display: inline-flex; align-items: center; gap: 8px; }
+    .pricing-trust span::before {
+      content: "✓"; color: var(--amber-500); font-size: 12px;
     }
 
     /* ─────────── CTA BLOCK ─────────── */
@@ -707,20 +797,62 @@
         "offers": [
           {
             "@type": "Offer",
-            "name": "Inicio",
-            "price": "0",
+            "name": "Pack Starter",
+            "price": "39",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
-            "url": "https://app.madobra.com/register",
-            "description": "1 rol activo, diagnósticos ilimitados, planes básicos"
+            "url": "https://app.madobra.com/register?plan=starter",
+            "description": "5 créditos (5 candidatos diagnosticados con plan de formación). Sin caducidad."
           },
           {
             "@type": "Offer",
-            "name": "Empresa",
+            "name": "Pack Growth",
+            "price": "99",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
-            "url": "mailto:info@madobra.com",
-            "description": "Roles ilimitados, planes avanzados, seguimiento de progreso, soporte prioritario"
+            "url": "https://app.madobra.com/register?plan=growth",
+            "description": "15 créditos (15 candidatos diagnosticados con plan de formación). Sin caducidad."
+          },
+          {
+            "@type": "Offer",
+            "name": "Pack Scale",
+            "price": "249",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://app.madobra.com/register?plan=scale",
+            "description": "50 créditos (50 candidatos diagnosticados con plan de formación). Transferibles entre usuarios. Sin caducidad."
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro mensual",
+            "price": "79",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://app.madobra.com/register?plan=pro",
+            "description": "Suscripción mensual con 20 créditos incluidos (rolling 3 meses), roles personalizados, seguimiento de progreso, alertas de caducidad y hasta 3 usuarios.",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "79",
+              "priceCurrency": "EUR",
+              "unitCode": "MON",
+              "billingDuration": "P1M"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro anual",
+            "price": "790",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://app.madobra.com/register?plan=pro-annual",
+            "description": "Suscripción anual (equivale a 10 meses): 240 créditos al año, roles personalizados, seguimiento de progreso, alertas de caducidad y hasta 3 usuarios.",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "790",
+              "priceCurrency": "EUR",
+              "unitCode": "ANN",
+              "billingDuration": "P1Y"
+            }
           }
         ],
         "featureList": [
@@ -782,7 +914,7 @@
         "mainEntity": [
           { "@type": "Question", "name": "¿Qué es MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "MADOBRA es una plataforma B2B que ayuda a empresas industriales a cubrir vacantes operativas más rápido. En lugar de filtrar candidatos por experiencia, diagnosticamos sus competencias con IA y generamos planes de formación personalizados para que lleguen preparados." } },
           { "@type": "Question", "name": "¿Para qué tipo de puestos sirve MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "Para puestos operativos cualificados (blue collar) en sectores como logística, manufactura, construcción, industria, automoción, alimentación, instalaciones y transporte." } },
-          { "@type": "Question", "name": "¿Cuánto cuesta MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "El plan Inicio es gratis e incluye 1 rol activo y diagnósticos ilimitados. El plan Empresa, bajo demanda, incluye roles ilimitados, planes avanzados y seguimiento de progreso. Los candidatos siempre usan la plataforma de forma gratuita." } },
+          { "@type": "Question", "name": "¿Cuánto cuesta MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "MADOBRA funciona con créditos: 1 crédito equivale a un candidato diagnosticado con plan de formación listo. Pack Starter 39 € (5 créditos, 7,80 €/crédito), Pack Growth 99 € (15 créditos, 6,60 €/crédito) y Pack Scale 249 € (50 créditos, 4,98 €/crédito, el más popular). Para equipos que contratan de forma continua, la suscripción Pro cuesta 79 €/mes o 790 €/año e incluye 20 créditos mensuales más features premium. Los créditos de pack no caducan y los candidatos siempre usan la plataforma gratis. Al registrarte recibes 1 crédito gratis sin tarjeta." } },
           { "@type": "Question", "name": "¿Cuánto se tarda en definir un puesto?", "acceptedAnswer": { "@type": "Answer", "text": "Unos 10 minutos. Respondes un cuestionario guiado sobre tareas, herramientas y nivel mínimo de competencia, y la IA extrae automáticamente el mapa de competencias del puesto." } },
           { "@type": "Question", "name": "¿Los candidatos necesitan crear cuenta para hacer el diagnóstico?", "acceptedAnswer": { "@type": "Answer", "text": "No. El diagnóstico se comparte mediante un enlace público y el candidato lo completa en unos 30 minutos sin registro." } }
         ]
@@ -830,7 +962,7 @@
           </div>
           <div class="hero-note">
             <span class="dot" aria-hidden="true"></span>
-            Sin tarjeta · Plan Inicio gratuito · 10 min para empezar
+            Sin tarjeta · 1 crédito gratis al registrarte · 10 min para empezar
           </div>
         </div>
 
@@ -1055,37 +1187,89 @@
         <div class="section-mark"><span class="n">§ 05</span>Planes</div>
         <div class="section-head">
           <div class="section-head-tag">Precios</div>
-          <h2>Modelo sencillo, sin sorpresas.</h2>
-          <p>Pagas por rol activo. Los candidatos usan la plataforma gratis.</p>
+          <h2>Paga solo por lo que uses.</h2>
+          <p>1 crédito = 1 candidato diagnosticado y con plan de formación listo. Sin caducidad, sin permanencia.</p>
         </div>
       </div>
 
       <div class="pricing-grid">
         <div class="plan">
-          <div class="plan-name"><span>Plan · Inicio</span></div>
-          <div class="plan-price">Gratis</div>
-          <div class="plan-desc">Para probar la plataforma con un puesto.</div>
+          <div class="plan-name"><span>Pack · Starter</span></div>
+          <div class="plan-price">39&nbsp;€<span class="unit">5 créditos</span></div>
+          <div class="plan-price-note">7,80 € / crédito</div>
+          <div class="plan-desc">Para cubrir una primera vacante y probar el flujo end-to-end.</div>
           <ul class="plan-features">
-            <li>1 rol activo</li>
-            <li>Diagnósticos ilimitados</li>
-            <li>Mapa de competencias con IA</li>
-            <li>Planes de formación básicos</li>
+            <li>5 candidatos diagnosticados</li>
+            <li>Plan de formación por candidato</li>
+            <li>Biblioteca de roles estándar</li>
+            <li>Verificación documental básica</li>
           </ul>
-          <a href="https://app.madobra.com/register" class="btn btn-secondary btn-md">Empezar gratis</a>
+          <a href="https://app.madobra.com/register?plan=starter" class="btn btn-secondary btn-md">Comprar 5 créditos</a>
+        </div>
+        <div class="plan">
+          <div class="plan-name"><span>Pack · Growth</span></div>
+          <div class="plan-price">99&nbsp;€<span class="unit">15 créditos</span></div>
+          <div class="plan-price-note">6,60 € / crédito</div>
+          <div class="plan-desc">Para procesos recurrentes con varias vacantes al trimestre.</div>
+          <ul class="plan-features">
+            <li>15 candidatos diagnosticados</li>
+            <li>Plan de formación por candidato</li>
+            <li>Biblioteca de roles estándar</li>
+            <li>Sin caducidad de créditos</li>
+          </ul>
+          <a href="https://app.madobra.com/register?plan=growth" class="btn btn-secondary btn-md">Comprar 15 créditos</a>
         </div>
         <div class="plan featured">
-          <div class="plan-name"><span>Plan · Empresa</span><span class="rec">RECOMENDADO</span></div>
-          <div class="plan-price">Contáctanos</div>
-          <div class="plan-desc">Para empresas con múltiples vacantes operativas.</div>
+          <div class="plan-name"><span>Pack · Scale</span><span class="rec">MÁS POPULAR</span></div>
+          <div class="plan-price">249&nbsp;€<span class="unit">50 créditos</span></div>
+          <div class="plan-price-note">4,98 € / crédito · ahorra 36%</div>
+          <div class="plan-desc">Para campañas intensivas, picos estacionales o varias plantas.</div>
           <ul class="plan-features">
-            <li>Roles ilimitados</li>
-            <li>Diagnósticos ilimitados</li>
-            <li>Planes de formación avanzados</li>
-            <li>Seguimiento de progreso</li>
-            <li>Soporte prioritario</li>
+            <li>50 candidatos diagnosticados</li>
+            <li>Plan de formación por candidato</li>
+            <li>Transferibles entre usuarios de la cuenta</li>
+            <li>Sin caducidad de créditos</li>
           </ul>
-          <a href="mailto:info@madobra.com" class="btn btn-primary btn-md">Solicitar demo</a>
+          <a href="https://app.madobra.com/register?plan=scale" class="btn btn-primary btn-md">Comprar 50 créditos</a>
         </div>
+      </div>
+
+      <div class="pricing-pro">
+        <div class="pro-left">
+          <div class="pro-tag">Suscripción · Pro</div>
+          <div class="pro-title">Para equipos que contratan de forma continua.</div>
+          <div class="pro-sub">20 créditos incluidos cada mes (rolling 3 meses) más las features premium. Cancela cuando quieras.</div>
+          <div class="pro-price-row">
+            <div class="pro-price">79&nbsp;€<span class="unit">/ mes</span></div>
+            <div class="pro-price-annual">O <strong>790&nbsp;€ / año</strong> — ahorras 2 meses</div>
+          </div>
+        </div>
+        <div class="pro-right">
+          <ul class="pro-features">
+            <li>20 créditos / mes incluidos</li>
+            <li>Alertas de caducidad de certificaciones</li>
+            <li>Roles personalizados a tu proceso</li>
+            <li>Seguimiento de progreso del candidato</li>
+            <li>Hasta 3 usuarios por cuenta</li>
+            <li>Soporte email en 24 h</li>
+          </ul>
+          <a href="https://app.madobra.com/register?plan=pro" class="btn btn-primary btn-md">Empezar con Pro</a>
+        </div>
+      </div>
+
+      <div class="pricing-enterprise">
+        <div class="enterprise-copy">
+          <span class="tag">Enterprise · ETT</span>
+          <span class="title">Alto volumen, API para tu ATS, multi-empresa y gestor de cuenta dedicado. Pricing a medida con contrato anual.</span>
+        </div>
+        <a href="mailto:info@madobra.com?subject=Enterprise%20%E2%80%94%20MADOBRA" class="btn btn-secondary btn-md">Habla con nosotros</a>
+      </div>
+
+      <div class="pricing-trust">
+        <span>1 crédito gratis al registrarte</span>
+        <span>Sin tarjeta para empezar</span>
+        <span>Los créditos no caducan</span>
+        <span>Cancela Pro cuando quieras</span>
       </div>
     </div>
   </section>
