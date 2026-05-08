@@ -56,18 +56,26 @@ The site is styled as an **industrial technical publication** — a field report
 
 Source of truth for the full pricing spec: `/Users/alvaroecheverria/Dropbox/Claude/madobra/madobra_pricing_spec.md` (sibling repo, not in this one).
 
-**Unidad de valor**: 1 crédito = 1 candidato diagnosticado + plan de formación personalizado listo. Los candidatos siempre usan la plataforma gratis.
+**Unidad de valor**: 1 crédito = 1 paso del proceso. Los candidatos siempre usan la plataforma gratis.
+
+Tres pasos consumen crédito (1 crédito cada uno):
+1. Diagnosticar un puesto — una sola vez por puesto, se reutiliza para todos los candidatos que pasen por ese puesto.
+2. Evaluar un candidato — 1 crédito por candidato.
+3. Generar el plan de formación personalizado — 1 crédito por candidato.
+
+Reutilizar un puesto reduce el coste por candidato: el diagnóstico se paga una sola vez y cada candidato preparado (evaluación + plan) son 2 créditos. La web muestra esto explícitamente en un bloque "Cómo funcionan los créditos" encima del grid de packs, y cada pack-card lleva un ejemplo concreto de uso.
 
 **Visible on web — three credit packs only:**
 
-| Pack | Precio | Créditos | €/crédito | CTA |
-|---|---|---|---|---|
-| Starter | 39 € | 5 | 7,80 € | `app.madobra.com/register?plan=starter` |
-| Growth | 99 € | 15 | 6,60 € | `app.madobra.com/register?plan=growth` |
-| Scale (MÁS POPULAR) | 249 € | 50 | 4,98 € | `app.madobra.com/register?plan=scale` |
+| Pack | Precio | Créditos | €/crédito | Ejemplo de uso | CTA |
+|---|---|---|---|---|---|
+| Starter | 39 € | 15 | 2,60 € | 3 puestos + 6 candidatos preparados | `app.madobra.com/register?plan=starter` |
+| Growth | 99 € | 50 | 1,98 € | 2 puestos + 24 candidatos preparados | `app.madobra.com/register?plan=growth` |
+| Scale (MÁS POPULAR) | 249 € | 150 | 1,66 € | 6 puestos + 72 candidatos preparados | `app.madobra.com/register?plan=scale` |
 
 - One-time purchase, no expiration, transferibles entre usuarios de la misma cuenta.
-- Trust row + hero microcopy: "1 crédito gratis al registrarte, sin tarjeta".
+- Trust row + hero microcopy: "3 créditos gratis al registrarte, sin tarjeta" (3 créditos = 1 puesto + 1 candidato listo, suficiente para probar el flow completo en 1 candidato).
+- Pricing structure updated 2026-05-07: previous model was 1 crédito por candidato listo (eval + plan included); new model splits into 3 pasos (puesto + eval + plan). Pack credit amounts kept at 15/50/150 (set in app on 2026-04-27); web was still showing the old 5/15/50.
 
 **Hidden from web (deliberate — not activated yet):**
 
@@ -78,7 +86,7 @@ Both exist in the full spec and will be surfaced later. When reactivating, retri
 
 **Where pricing lives in this repo (keep these in sync if numbers change):**
 
-- `index.html` — pricing section (`#precios`), CSS `.pricing-grid / .plan / .pricing-trust`, JSON-LD `SoftwareApplication.offers` (3 Offer entries), FAQ answer to `¿Cuánto cuesta MADOBRA?`, hero microcopy under the primary CTA ("1 crédito gratis al registrarte").
+- `index.html` — pricing section (`#precios`), CSS `.pricing-grid / .plan / .plan-example / .credit-spec / .pricing-trust`, JSON-LD `SoftwareApplication.offers` (3 Offer entries), FAQ answer to `¿Cuánto cuesta MADOBRA?`, hero microcopy under the primary CTA ("3 créditos gratis al registrarte").
 - `llms.txt` — `## Modelo de precios` block.
 
 **App alignment pending**: if `app.madobra.com` still shows Pro or Enterprise anywhere (pricing page, registration, billing), those plans should be hidden until activated so web and app agree.

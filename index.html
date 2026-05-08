@@ -606,7 +606,65 @@
       text-transform: uppercase; color: var(--text-2);
       margin-bottom: 18px; font-variant-numeric: tabular-nums;
     }
+    .plan-example {
+      font-family: var(--mono); font-size: 11px; line-height: 16px;
+      letter-spacing: 0.08em; color: var(--navy-500);
+      padding: 8px 0 8px 12px; margin-bottom: 18px;
+      border-left: 2px solid var(--amber-500);
+      font-variant-numeric: tabular-nums;
+    }
+    .plan-example .label {
+      display: block; color: var(--text-2);
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 2px;
+    }
     .plan-desc { font-size: 14px; line-height: 22px; color: var(--text-2); margin-bottom: 24px; max-width: 36ch; }
+
+    /* Credit-spec explainer above pricing grid */
+    .credit-spec {
+      max-width: 1080px; margin: 0 auto 36px;
+      border: var(--hairline) solid var(--border);
+      background: var(--surface);
+    }
+    .credit-spec-head {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-2);
+      padding: 12px 20px; border-bottom: var(--hairline) solid var(--border);
+    }
+    .credit-spec-rows {
+      display: grid; grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      .credit-spec-rows { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .credit-spec-row {
+      padding: 18px 20px; border-bottom: var(--hairline) solid var(--border);
+    }
+    @media (min-width: 768px) {
+      .credit-spec-row { border-bottom: 0; border-right: var(--hairline) solid var(--border); }
+      .credit-spec-row:last-child { border-right: 0; }
+    }
+    @media (max-width: 767px) {
+      .credit-spec-row:last-child { border-bottom: 0; }
+    }
+    .credit-spec-row .num {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      color: var(--amber-500); display: block; margin-bottom: 6px;
+    }
+    .credit-spec-row .step {
+      font-size: 15px; line-height: 22px; color: var(--navy-500);
+      font-weight: 500; margin-bottom: 4px;
+    }
+    .credit-spec-row .cost {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+      color: var(--text-2); text-transform: uppercase;
+      font-variant-numeric: tabular-nums;
+    }
+    .credit-spec-foot {
+      font-size: 13px; line-height: 20px; color: var(--text-2);
+      padding: 14px 20px; border-top: var(--hairline) solid var(--border);
+      background: var(--cream-50);
+    }
     .plan-features { list-style: none; flex: 1; margin-bottom: 28px; border-top: var(--hairline) dashed var(--border); }
     .plan-features li {
       font-size: 14px; line-height: 22px; color: var(--navy-500);
@@ -735,7 +793,7 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://app.madobra.com/register?plan=starter",
-            "description": "5 créditos (5 candidatos diagnosticados con plan de formación). Sin caducidad."
+            "description": "15 créditos (2,60 €/crédito). 1 crédito por puesto diagnosticado, 1 por candidato evaluado y 1 por plan de formación generado. Ejemplo de uso: 3 puestos + 6 candidatos preparados. Sin caducidad. Transferibles entre usuarios."
           },
           {
             "@type": "Offer",
@@ -744,7 +802,7 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://app.madobra.com/register?plan=growth",
-            "description": "15 créditos (15 candidatos diagnosticados con plan de formación). Sin caducidad."
+            "description": "50 créditos (1,98 €/crédito). 1 crédito por puesto diagnosticado, 1 por candidato evaluado y 1 por plan de formación generado. Ejemplo de uso: 2 puestos + 24 candidatos preparados. Sin caducidad. Transferibles entre usuarios."
           },
           {
             "@type": "Offer",
@@ -753,7 +811,7 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://app.madobra.com/register?plan=scale",
-            "description": "50 créditos (50 candidatos diagnosticados con plan de formación). Transferibles entre usuarios. Sin caducidad."
+            "description": "150 créditos (1,66 €/crédito). 1 crédito por puesto diagnosticado, 1 por candidato evaluado y 1 por plan de formación generado. Ejemplo de uso: 6 puestos + 72 candidatos preparados. Sin caducidad. Transferibles entre usuarios. Pack más popular."
           }
         ],
         "featureList": [
@@ -815,7 +873,7 @@
         "mainEntity": [
           { "@type": "Question", "name": "¿Qué es MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "MADOBRA es una plataforma B2B que ayuda a empresas industriales a cubrir vacantes operativas más rápido. En lugar de filtrar candidatos por experiencia, diagnosticamos sus competencias con IA y generamos planes de formación personalizados para que lleguen preparados." } },
           { "@type": "Question", "name": "¿Para qué tipo de puestos sirve MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "Para puestos operativos cualificados (blue collar) en sectores como logística, manufactura, construcción, industria, automoción, alimentación, instalaciones y transporte." } },
-          { "@type": "Question", "name": "¿Cuánto cuesta MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "MADOBRA funciona con créditos: 1 crédito equivale a un candidato diagnosticado con plan de formación listo. Pack Starter 39 € (5 créditos, 7,80 €/crédito), Pack Growth 99 € (15 créditos, 6,60 €/crédito) y Pack Scale 249 € (50 créditos, 4,98 €/crédito, el más popular). Los créditos no caducan y son transferibles entre usuarios de la misma cuenta. Al registrarte recibes 1 crédito gratis sin tarjeta. Los candidatos siempre usan la plataforma gratis." } },
+          { "@type": "Question", "name": "¿Cuánto cuesta MADOBRA?", "acceptedAnswer": { "@type": "Answer", "text": "MADOBRA funciona con créditos. 1 crédito = 1 paso del proceso: 1 crédito por diagnosticar un puesto (una sola vez por puesto), 1 crédito por evaluar un candidato y 1 crédito por generar el plan de formación personalizado. Reutilizar el mismo puesto reduce el coste por candidato. Pack Starter 39 € (15 créditos, 2,60 €/crédito) — ej. 3 puestos + 6 candidatos preparados. Pack Growth 99 € (50 créditos, 1,98 €/crédito) — ej. 2 puestos + 24 candidatos preparados. Pack Scale 249 € (150 créditos, 1,66 €/crédito, el más popular) — ej. 6 puestos + 72 candidatos preparados. Los créditos no caducan y son transferibles entre usuarios de la misma cuenta. Al registrarte recibes 3 créditos gratis sin tarjeta. Los candidatos siempre usan la plataforma gratis." } },
           { "@type": "Question", "name": "¿Cuánto se tarda en definir un puesto?", "acceptedAnswer": { "@type": "Answer", "text": "Unos 10 minutos. Respondes un cuestionario guiado sobre tareas, herramientas y nivel mínimo de competencia, y la IA extrae automáticamente el mapa de competencias del puesto." } },
           { "@type": "Question", "name": "¿Los candidatos necesitan crear cuenta para hacer el diagnóstico?", "acceptedAnswer": { "@type": "Answer", "text": "No. El diagnóstico se comparte mediante un enlace público y el candidato lo completa en unos 30 minutos sin registro." } }
         ]
@@ -863,7 +921,7 @@
           </div>
           <div class="hero-note">
             <span class="dot" aria-hidden="true"></span>
-            Sin tarjeta · 1 crédito gratis al registrarte · 10 min para empezar
+            Sin tarjeta · 3 créditos gratis al registrarte · 10 min para empezar
           </div>
         </div>
 
@@ -1088,55 +1146,91 @@
         <div class="section-mark"><span class="n">§ 05</span>Planes</div>
         <div class="section-head">
           <div class="section-head-tag">Precios</div>
-          <h2>Paga solo por lo que uses.</h2>
-          <p>1 crédito = 1 candidato diagnosticado y con plan de formación listo. Sin caducidad, sin permanencia.</p>
+          <h2>Paga solo por los pasos que uses.</h2>
+          <p>1 crédito = 1 paso del proceso. Sin caducidad, sin permanencia.</p>
+        </div>
+      </div>
+
+      <div class="credit-spec">
+        <div class="credit-spec-head">Cómo funcionan los créditos</div>
+        <div class="credit-spec-rows">
+          <div class="credit-spec-row">
+            <span class="num">§ 01</span>
+            <div class="step">Diagnosticar un puesto</div>
+            <div class="cost">1 crédito · una vez por puesto</div>
+          </div>
+          <div class="credit-spec-row">
+            <span class="num">§ 02</span>
+            <div class="step">Evaluar un candidato</div>
+            <div class="cost">1 crédito · por candidato</div>
+          </div>
+          <div class="credit-spec-row">
+            <span class="num">§ 03</span>
+            <div class="step">Generar plan personalizado</div>
+            <div class="cost">1 crédito · por candidato</div>
+          </div>
+        </div>
+        <div class="credit-spec-foot">
+          Reutilizar un puesto sale más barato: el diagnóstico se paga una sola vez y cada candidato preparado (evaluación + plan) son 2 créditos.
         </div>
       </div>
 
       <div class="pricing-grid">
         <div class="plan">
           <div class="plan-name"><span>Pack · Starter</span></div>
-          <div class="plan-price">39&nbsp;€<span class="unit">5 créditos</span></div>
-          <div class="plan-price-note">7,80 € / crédito</div>
+          <div class="plan-price">39&nbsp;€<span class="unit">15 créditos</span></div>
+          <div class="plan-price-note">2,60 € / crédito</div>
+          <div class="plan-example">
+            <span class="label">Ejemplo de uso</span>
+            3 puestos · 6 candidatos preparados
+          </div>
           <div class="plan-desc">Para cubrir una primera vacante y probar el flujo end-to-end.</div>
           <ul class="plan-features">
-            <li>5 candidatos diagnosticados</li>
-            <li>Plan de formación por candidato</li>
             <li>Biblioteca de roles estándar</li>
             <li>Verificación documental básica</li>
+            <li>Sin caducidad de créditos</li>
+            <li>Transferibles entre usuarios</li>
           </ul>
-          <a href="https://app.madobra.com/register?plan=starter" class="btn btn-secondary btn-md">Comprar 5 créditos</a>
+          <a href="https://app.madobra.com/register?plan=starter" class="btn btn-secondary btn-md">Comprar 15 créditos</a>
         </div>
         <div class="plan">
           <div class="plan-name"><span>Pack · Growth</span></div>
-          <div class="plan-price">99&nbsp;€<span class="unit">15 créditos</span></div>
-          <div class="plan-price-note">6,60 € / crédito</div>
+          <div class="plan-price">99&nbsp;€<span class="unit">50 créditos</span></div>
+          <div class="plan-price-note">1,98 € / crédito</div>
+          <div class="plan-example">
+            <span class="label">Ejemplo de uso</span>
+            2 puestos · 24 candidatos preparados
+          </div>
           <div class="plan-desc">Para procesos recurrentes con varias vacantes al trimestre.</div>
           <ul class="plan-features">
-            <li>15 candidatos diagnosticados</li>
-            <li>Plan de formación por candidato</li>
             <li>Biblioteca de roles estándar</li>
+            <li>Verificación documental básica</li>
             <li>Sin caducidad de créditos</li>
+            <li>Transferibles entre usuarios</li>
           </ul>
-          <a href="https://app.madobra.com/register?plan=growth" class="btn btn-secondary btn-md">Comprar 15 créditos</a>
+          <a href="https://app.madobra.com/register?plan=growth" class="btn btn-secondary btn-md">Comprar 50 créditos</a>
         </div>
         <div class="plan featured">
           <div class="plan-name"><span>Pack · Scale</span><span class="rec">MÁS POPULAR</span></div>
-          <div class="plan-price">249&nbsp;€<span class="unit">50 créditos</span></div>
-          <div class="plan-price-note">4,98 € / crédito · ahorra 36%</div>
+          <div class="plan-price">249&nbsp;€<span class="unit">150 créditos</span></div>
+          <div class="plan-price-note">1,66 € / crédito · ahorra 36%</div>
+          <div class="plan-example">
+            <span class="label">Ejemplo de uso</span>
+            6 puestos · 72 candidatos preparados
+          </div>
           <div class="plan-desc">Para campañas intensivas, picos estacionales o varias plantas.</div>
           <ul class="plan-features">
-            <li>50 candidatos diagnosticados</li>
-            <li>Plan de formación por candidato</li>
-            <li>Transferibles entre usuarios de la cuenta</li>
+            <li>Biblioteca de roles estándar</li>
+            <li>Verificación documental básica</li>
             <li>Sin caducidad de créditos</li>
+            <li>Transferibles entre usuarios</li>
           </ul>
-          <a href="https://app.madobra.com/register?plan=scale" class="btn btn-primary btn-md">Comprar 50 créditos</a>
+          <a href="https://app.madobra.com/register?plan=scale" class="btn btn-primary btn-md">Comprar 150 créditos</a>
         </div>
       </div>
 
       <div class="pricing-trust">
-        <span>1 crédito gratis al registrarte</span>
+        <span>3 créditos gratis al registrarte</span>
         <span>Sin tarjeta para empezar</span>
         <span>Los créditos no caducan</span>
         <span>Transferibles entre usuarios</span>
